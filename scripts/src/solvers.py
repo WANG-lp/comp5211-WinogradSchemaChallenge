@@ -6,7 +6,24 @@ from common import TagProcessor
 from nltk_helper import SentenceParser
 from kb import WordParser
 
+from nltk.corpus import wordnet
 
+#if a word is not in the knowledge base, we calculate the similarity of this word with other words in KB
+#Intput is the unknownword and a word in KB;
+class WordFeature:
+    def getFeature(UnkownWord, KBWord):
+        syns1 = wordnet.synsets(UnkownWord)
+        syns2 = wordnet.synsets(KBWord)
+        sim_value
+        for lemma1 in syns1:
+            for lemma2 in syns2:
+                sim_value += lemma1.wup_similarity(lemma2)
+        
+        sim_value = sim_value/(syns1.size() * syns2.size())
+        return sim_value
+
+    #def getValue:
+    
 class SolverBaseClass:
     def __init__(self):
         self.tagProcessor = TagProcessor()
