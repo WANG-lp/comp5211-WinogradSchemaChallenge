@@ -1,7 +1,7 @@
 import csv
 
 
-class VerbParser:
+class WordParser:
     verbSet = []
     adjSet = []
     def __init__(self):
@@ -38,46 +38,55 @@ class VerbParser:
                             'prop':l['prop']}
 
     def parserV(self, string):
-        for l in self.verbSet:
-            for v in l['verb']:
-                if string == v:
-                    return {'isVerb': True,
-                            'gerund':False,
-                            'prop': l['prop'],
-                            'isPast': False,
-                            'isParticiple': False,
-                            'string':v,
-                            }
-            for v in l['gerund']:
-                if string == v:
-                    return {'isVerb': False,
-                            'gerund':True,
-                            'prop': l['prop'],
-                            'isPast': False,
-                            'isParticiple': False,
-                            'string': v,
-                            }
-            for v in l['past']:
-                if string == v:
-                    return {'isVerb': False,
-                            'gerund': False,
-                            'prop': l['prop'],
-                            'isPast': True,
-                            'isParticiple': False,
-                            'string': v,
-                            }
-            for v in l['participle']:
-                if string == v:
-                    return {'isVerb': False,
-                            'gerund': False,
-                            'prop': l['prop'],
-                            'isPast': False,
-                            'isParticiple': True,
-                            'string': v,
-                            }
-        print "Word:'" + string + "' was not found in the knowledge database."
-        return None
+        isVerb = False
+        isGerund = False
+        isPast = False
+        isParticiple = False
+        prop = 1;
+
+        isFound = False
+
+        if not isFound:
+            for l in self.verbSet:
+                for v in l['verb']:
+                    if string == v:
+                        prop = l['prop']
+                        isVerb = True
+                        isFound = True
+            if not isFound:
+                for l in self.verbSet:
+                    for v in l['gerund']:
+                        if string == v:
+                            prop = l['prop']
+                            isGerund = True
+                            isFound = True
+            if not isFound:
+                for v in l['past']:
+                    for l in self.verbSet:
+                        if string == v:
+                            prop = l['prop']
+                            isPast = True
+                            isFound = True
+            if not isFound:
+                for l in self.verbSet:
+                    for v in l['participle']:
+                        if string == v:
+                            prop = l['prop']
+                            isParticiple = True
+                            isFound = True
+
+        if isFound:
+            return {'string': string,
+                    'isVerb':isVerb,
+                    'isGerund':isGerund,
+                    'isPast':isPast,
+                    'isParticiple':isParticiple,
+                    'prop':prop
+                    }
+        else:
+            print "Word:'" + string + "' was not found in the knowledge database."
+            return None
 
 if __name__ == "__main__":
-    vParser = VerbParser()
+    vParser = WordParser()
     print vParser.verbSet

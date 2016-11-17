@@ -4,14 +4,14 @@ import string
 from input_parse import InputParser
 from common import TagProcessor
 from nltk_helper import SentenceParser
-from kb import VerbParser
+from kb import WordParser
 
 
 class SolverBaseClass:
     def __init__(self):
         self.tagProcessor = TagProcessor()
         self.sentenceParser = SentenceParser()
-        self.vbParser = VerbParser()
+        self.vbParser = WordParser()
 
     def solver(self, question):
         return 'a'
@@ -74,10 +74,12 @@ class PositiveNegativeSolver(SolverBaseClass):
                     txt2_prop = self.vbParser.parserV(txt2_v[0])
                     break
 
+        print txt1_positive, txt2_positive
         print txt1_prop
         print txt2_prop
 
-
+        if txt1_prop is None or txt2_prop is None:
+            return 'n/a'
         if txt1_positive * txt2_positive * txt1_prop['prop'] * txt2_prop['prop'] > 0:
             return 'a'
 
