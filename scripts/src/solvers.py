@@ -19,7 +19,7 @@ class WordFeature:
             for lemma2 in syns2:
                 sim_value += lemma1.wup_similarity(lemma2)
         
-        sim_value = sim_value/(syns1.size() * syns2.size())
+        sim_value = sim_value/(len(syns1) * len(syns2))
         return sim_value
 
     #def getValue:
