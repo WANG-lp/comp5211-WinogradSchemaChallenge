@@ -1,6 +1,27 @@
 import csv
 
 
+class KB:
+    verbKB = {}
+    adjKB = {}
+
+    def __init__(self, kb_dir="../KB/"):
+        with open(kb_dir + "verb_list.txt") as f:
+            spamreader = csv.reader(f, delimiter=' ')
+            for row in spamreader:
+                self.verbKB[row[0]] = float(row[1])
+        with open(kb_dir + "adj_list.txt") as f:
+            spamreader = csv.reader(f, delimiter=' ')
+            for row in spamreader:
+                self.adjKB[row[0]] = float(row[1])
+
+    def getVerbKB(self):
+        return self.verbKB
+
+    def getAdjKB(self):
+        return self.adjKB
+
+
 class WordParser:
     verbSet = []
     adjSet = []
