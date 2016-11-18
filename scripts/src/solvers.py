@@ -8,22 +8,24 @@ from kb import WordParser
 
 from nltk.corpus import wordnet
 
-#if a word is not in the knowledge base, we calculate the similarity of this word with other words in KB
-#Intput is the unknownword and a word in KB;
+
+# if a word is not in the knowledge base, we calculate the similarity of this word with other words in KB
+# Intput is the unknownword and a word in KB;
 class WordFeature:
     def getFeature(UnkownWord, KBWord):
         syns1 = wordnet.synsets(UnkownWord)
         syns2 = wordnet.synsets(KBWord)
-        sim_value
+        sim_value = None
         for lemma1 in syns1:
             for lemma2 in syns2:
                 sim_value += lemma1.wup_similarity(lemma2)
-        
-        sim_value = sim_value/(len(syns1) * len(syns2))
+
+        sim_value = sim_value / (len(syns1) * len(syns2))
         return sim_value
 
-    #def getValue:
-    
+        # def getValue:
+
+
 class SolverBaseClass:
     def __init__(self):
         self.tagProcessor = TagProcessor()
@@ -48,12 +50,11 @@ class PositiveNegativeSolver(SolverBaseClass):
                 verbIndex = i
                 break
         s1 = " ".join(x[0] for x in tx1_tags[:verbIndex])
-       # s2 = " ".join(x[0] for x in tx1_tags[verbIndex:])
+        # s2 = " ".join(x[0] for x in tx1_tags[verbIndex:])
 
         if s1.find(question[2][0]) != -1:
             return 1
         return -1
-
 
     def solver(self, question):
         answer_order = self.mapAB(question)

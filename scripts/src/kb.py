@@ -4,8 +4,9 @@ import csv
 class WordParser:
     verbSet = []
     adjSet = []
-    def __init__(self):
-        with open('../KB/verbs.csv', 'rb') as csvfile:
+
+    def __init__(self, kb_dir="../KB/"):
+        with open(kb_dir + 'verbs.csv', 'rb') as csvfile:
             spamreader = csv.reader(csvfile, delimiter=';', quotechar='#')
             for row in spamreader:
                 verb = row[0].split(",")
@@ -14,12 +15,12 @@ class WordParser:
                 participle = row[3].split(",")
                 prop = int(row[4])
                 self.verbSet.append({'verb': verb,
-                                     'gerund':gerund,
+                                     'gerund': gerund,
                                      'past': past,
                                      'participle': participle,
                                      'prop': prop, })
 
-        with open('../KB/adjs.csv', 'rb') as csvfile:
+        with open(kb_dir + 'adjs.csv', 'rb') as csvfile:
             spamreader = csv.reader(csvfile, delimiter=';', quotechar='#')
             for row in spamreader:
                 adj = row[0].split(",")
@@ -27,15 +28,16 @@ class WordParser:
                 adjest = row[2].split(",")
                 prop = int(row[3])
                 self.adjSet.append({'adj': adj,
-                                     'adjer': adjer,
-                                     'adjest': adjest,
-                                     'prop': prop, })
+                                    'adjer': adjer,
+                                    'adjest': adjest,
+                                    'prop': prop, })
+
     def parserAdj(self, string):
         for l in self.adjSet:
             for a in l['adj']:
                 if string == a:
-                    return {'string':a,
-                            'prop':l['prop']}
+                    return {'string': a,
+                            'prop': l['prop']}
 
     def parserV(self, string):
         isVerb = False
@@ -77,15 +79,16 @@ class WordParser:
 
         if isFound:
             return {'string': string,
-                    'isVerb':isVerb,
-                    'isGerund':isGerund,
-                    'isPast':isPast,
-                    'isParticiple':isParticiple,
-                    'prop':prop
+                    'isVerb': isVerb,
+                    'isGerund': isGerund,
+                    'isPast': isPast,
+                    'isParticiple': isParticiple,
+                    'prop': prop
                     }
         else:
             print "Word:'" + string + "' was not found in the knowledge database."
             return None
+
 
 if __name__ == "__main__":
     vParser = WordParser()
