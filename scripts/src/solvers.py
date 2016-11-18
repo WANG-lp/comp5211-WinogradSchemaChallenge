@@ -22,7 +22,8 @@ class WordValue:
             for lemma2 in syns2:
                 if lemma1.wup_similarity(lemma2) is None:
                     sim_value = sim_value + 0    
-                sim_value = sim_value + lemma1.wup_similarity(lemma2)
+                else:
+                    sim_value = sim_value + lemma1.wup_similarity(lemma2)
 
         sim_value = sim_value / (len(syns1) * len(syns2))
         return sim_value
