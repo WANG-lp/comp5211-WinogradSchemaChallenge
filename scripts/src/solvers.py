@@ -13,7 +13,6 @@ from nltk.corpus import wordnet
 
 
 # Intput is the unknownword and a word in KB;
-
 def getFeature(UnkownWord, KBWord):
     syns1 = wordnet.synsets(UnkownWord)
     syns2 = wordnet.synsets(KBWord)
@@ -63,8 +62,7 @@ class SolverBaseClass:
     def solver(self, question):
         return 'a'
 
-    def returnAns(self, ans, par1, par2):
-        ans = ans * par1 * par2
+    def returnAns(self, ans):
         if ans > 0:
             return 'a'
         else:
@@ -125,7 +123,7 @@ class SolverBaseClass:
         for v in txt1_tags[::-1]:
             if self.tagProcessor.isVerb(v):
                 txt1_v = v[0]
-                txt1_prop = self.verbKB[txt1_v]
+                txt1_prop = getWordValue(txt1_v, self.verbKB)
                 break
 
         txt2_v = ''
@@ -134,15 +132,20 @@ class SolverBaseClass:
         for v in txt2_tags[::-1]:
             if self.tagProcessor.isAdj(v):
                 txt2_adj = v[0]
-                txt2_prop = self.adjKB[txt2_adj]
+                txt2_prop = getWordValue(txt2_adj, self.adjKB)
                 break
 
         if txt2_prop is None:
             for v in txt2_tags[::-1]:
                 if self.tagProcessor.isVerb(v):
                     txt2_v = v[0]
-                    txt2_prop = self.verbKB[txt1_v]
+                    txt2_prop = getWordValue(txt2_v, self.verbKB)
                     break
+
+        if txt1_prop  is None:
+            txt1_prop = 1
+        if txt2_prop is None:
+            txt2_prop = 1
         return [txt1_positive, txt2_positive, txt1_prop, txt2_prop]
 
 
@@ -151,7 +154,7 @@ class RandomForestsSolver(SolverBaseClass):
         featuresList = []
         targetList = []
         for q in questionList:
-            features = self.extractFeatures(q)[2:]
+            features = self.extractFeatures(q)
             features = self.fixFeature(features)
             if not self.listContainsNone(features):
                 featuresList.append(features)
@@ -163,7 +166,7 @@ class RandomForestsSolver(SolverBaseClass):
         self.clf = self.clf.fit(featuresList, targetList)
 
     def solver(self, question):
-        features = self.extractFeatures(question)[2:]
+        features = self.extractFeatures(question)
         features = self.fixFeature(features)
         if self.listContainsNone(features):
             print features
@@ -171,7 +174,7 @@ class RandomForestsSolver(SolverBaseClass):
             return 'N/A'
         else:
             ans = self.clf.predict([features])[0]
-            return self.returnAns(ans, features[0], features[1])
+            return self.returnAns(ans)
 
 
 class GussianSolver(SolverBaseClass):
@@ -179,7 +182,7 @@ class GussianSolver(SolverBaseClass):
         featuresList = []
         targetList = []
         for q in questionList:
-            features = self.extractFeatures(q)[2:]
+            features = self.extractFeatures(q)
             features = self.fixFeature(features)
             if not self.listContainsNone(features):
                 featuresList.append(features)
@@ -191,7 +194,7 @@ class GussianSolver(SolverBaseClass):
         self.clf = self.clf.fit(featuresList, targetList)
 
     def solver(self, question):
-        features = self.extractFeatures(question)[2:]
+        features = self.extractFeatures(question)
         features = self.fixFeature(features)
         if self.listContainsNone(features):
             print features
@@ -199,7 +202,7 @@ class GussianSolver(SolverBaseClass):
             return 'N/A'
         else:
             ans = self.clf.predict([features])[0]
-            return self.returnAns(ans, features[0], features[1])
+            return self.returnAns(ans)
 
 
 class SVMSolver(SolverBaseClass):
@@ -208,7 +211,7 @@ class SVMSolver(SolverBaseClass):
         targetList = []
         for q in questionList:
             # print q
-            features = self.extractFeatures(q)[2:]
+            features = self.extractFeatures(q)
             features = self.fixFeature(features)
             if not self.listContainsNone(features):
                 featuresList.append(features)
@@ -221,7 +224,7 @@ class SVMSolver(SolverBaseClass):
         self.clf.fit(featuresList, targetList)
 
     def solver(self, question):
-        features = self.extractFeatures(question)[2:]
+        features = self.extractFeatures(question)
         features = self.fixFeature(features)
         if self.listContainsNone(features):
             print features
@@ -229,57 +232,20 @@ class SVMSolver(SolverBaseClass):
             return 'N/A'
         else:
             ans = self.clf.predict([features])[0]
-            return self.returnAns(ans, features[0], features[1])
+            return self.returnAns(ans)
 
 
 class PositiveNegativeSolver(SolverBaseClass):
     def solver(self, question):
-        answer_order = self.mapAB(question)
-        txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])
-        txt1_positive = 1
-        if self.tagProcessor.isNegativeFromList(txt1_tags):
-            txt1_positive = -1
+        features = self.extractFeatures(question)
+        features = self.fixFeature(features)
 
-        txt2_tags = self.sentenceParser.makeTags(question[0]['pron'] + " " + question[0]['txt2'])
-        txt2_positive = 1
-        if self.tagProcessor.isNegativeFromList(txt2_tags):
-            txt2_positive = -1
+        ans = 1
+        print features
+        for x in features:
+            ans = ans * x
 
-        txt1_v = ''
-        txt1_prop = None
-        for v in txt1_tags[::-1]:
-            if self.tagProcessor.isVerb(v):
-                txt1_v = v
-                txt1_prop = self.vbParser.parserV(txt1_v[0])
-                break
-
-        txt2_v = ''
-        txt2_adj = ''
-        txt2_prop = None
-        for v in txt2_tags[::-1]:
-            if self.tagProcessor.isAdj(v):
-                txt2_adj = v
-                txt2_prop = self.vbParser.parserAdj(txt2_adj[0])
-                break
-
-        if txt2_prop is None:
-            for v in txt2_tags[::-1]:
-                if self.tagProcessor.isVerb(v):
-                    txt2_v = v
-                    txt2_prop = self.vbParser.parserV(txt2_v[0])
-                    break
-
-        print txt1_positive, txt2_positive
-        print txt1_prop
-        print txt2_prop
-
-        if txt1_prop is None or txt2_prop is None:
-            return 'n/a'
-        if txt1_positive * txt2_positive * txt1_prop['prop'] * txt2_prop['prop'] > 0:
-            return 'a'
-
-        return 'b'
-
+        return self.returnAns(ans)
 
 class RandomSolver(SolverBaseClass):
     def solver(self, question):

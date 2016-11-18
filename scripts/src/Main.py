@@ -21,19 +21,20 @@ if __name__ == "__main__":
 
     #naiveSolver = SolverBaseClass()
     #randomSolver = RandomSolver()
-    #pnSolver= PositiveNegativeSolver()
+    pnSolver= PositiveNegativeSolver()
     svmSolver = SVMSolver()
     rftSolver = RandomForestsSolver()
     gussianSolver = GussianSolver()
 
     total = 0
+    correct_pn = 0
     correct_svm = 0
     correct_rft = 0
     correct_guss = 0
 
     random.shuffle(ques)
 
-    trainSetSize = 120
+    trainSetSize = 200
     svmSolver.train(ques[:trainSetSize])
     rftSolver.train(ques[:trainSetSize], n_est= 6)
     gussianSolver.train(ques[:trainSetSize])
@@ -44,11 +45,16 @@ if __name__ == "__main__":
         print "Question " + str(total) + ':'
         print q[0]['txt1'],'#', q[0]['pron'],'#', q[0]['txt2']
         print q[1]['pron'] + q[1]['quote1'] + " "+ q[1]['quote2']
-        ans_svm = svmSolver.solver(q)
-        if ans_svm == 'N/A':
-            continue
+
         total += 1
 
+        ans_pn = pnSolver.solver(q)
+        if ans_pn == q[-1]:
+            print "PN correct!"
+            correct_pn += 1
+
+
+        ans_svm = svmSolver.solver(q)
         if ans_svm == q[-1]:
             print "svm correct!"
             correct_svm += 1
@@ -67,8 +73,9 @@ if __name__ == "__main__":
 
         #print randomSolver.solver(q), q[-1]
         print "#" * 6
-        input = raw_input("press any key to continue.")
+        #input = raw_input("press any key to continue.")
 
+    printC(correct_pn, total, "PN:")
     printC(correct_svm, total, "svm:")
-    printC(correct_svm, total, "gussian:")
+    printC(correct_guss, total, "gussian:")
     printC(correct_rft, total, "randomForestTree:")
