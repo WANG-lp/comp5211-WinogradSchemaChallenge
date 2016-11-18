@@ -32,17 +32,20 @@ if __name__ == "__main__":
     correct_rft = 0
     correct_guss = 0
 
-    random.shuffle(ques)
+    #random.shuffle(ques)
 
-    trainSetSize = 200
+    trainSetSize = 50
     svmSolver.train(ques[:trainSetSize])
     rftSolver.train(ques[:trainSetSize], n_est= 6)
     gussianSolver.train(ques[:trainSetSize])
 
-    for q in ques[trainSetSize:]:
-        #q = ques[4]
+    num = 0
+    for q in ques:
+        if num >= len(ques):
+            break
+        q = ques[num]
         print "#" * 6
-        print "Question " + str(total) + ':'
+        print "Question " + str(num) + ':'
         print q[0]['txt1'],'#', q[0]['pron'],'#', q[0]['txt2']
         print q[1]['pron'] + q[1]['quote1'] + " "+ q[1]['quote2']
 
@@ -73,7 +76,13 @@ if __name__ == "__main__":
 
         #print randomSolver.solver(q), q[-1]
         print "#" * 6
-        #input = raw_input("press any key to continue.")
+        #input_t = raw_input("Input any number to continue:")
+        input_t = ''
+        if len(input_t) == 0:
+            num = num + 1
+        else:
+            num = int(input)
+
 
     printC(correct_pn, total, "PN:")
     printC(correct_svm, total, "svm:")

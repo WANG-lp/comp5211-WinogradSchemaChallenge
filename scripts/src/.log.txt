@@ -1,0 +1,2692 @@
+######
+Question 0:
+the  Alice  refused the  Emily  a permit because # they # feared violence.
+they feared violence
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 1:
+the  Alice  refused the  Emily  a permit because # they # advocated violence.
+they advocated violence
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 2:
+the  Alice  doesn't fit into the brown  Emily  because # it # is too large.
+it is too large
+[-1, 1, -1, 1]
+PN correct!
+svm correct!
+rft correct!
+a a b a
+######
+######
+Question 3:
+the  Alice  doesn't fit into the brown  Emily  because # it # is too small.
+it is too small
+[-1, 1, -1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 4:
+ Alice  made sure to thank  Emily  for all the help # she # had received.
+she had received
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 5:
+ Alice  made sure to thank  Emily  for all the help # she # had given.
+she had given
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 6:
+ Alice  tried to call  Emily  on the phone, but # he # wasn't successful.
+he wasn't successful.
+[1, -1, 1, 1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 7:
+ Alice  tried to call  Emily  on the phone, but # he # wasn't available.
+he wasn't available.
+[1, -1, 1, 1]
+PN correct!
+a a a b
+######
+######
+Question 8:
+the  Alice  asked the  Emily  a question, but # he # was reluctant to repeat it.
+he was reluctant
+Word:'repeat' was not found in the knowledge database.
+[1, 1, -1, -1]
+PN correct!
+b b b a
+######
+######
+Question 9:
+the  Alice  asked the  Emily  a question, but # he # was reluctant to answer it.
+he was reluctant
+Word:'answer' was not found in the knowledge database.
+[1, 1, -1, -1]
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 10:
+the  Alice  zoomed by the  Emily  because # it # was going so fast.
+it was going so fast.
+Word:'zoomed' was not found in the knowledge database.
+Word:'going' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 11:
+the  Alice  zoomed by the  Emily  because # it # was going so slow.
+it was going so slow.
+Word:'zoomed' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 12:
+ Alice  felt vindicated when his longtime rival  Emily  revealed that # he # was the winner of the competition.
+he was the winner
+Word:'revealed' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 13:
+ Alice  felt crushed when his longtime rival  Emily  revealed that # he # was the winner of the competition.
+he was the winner
+Word:'revealed' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 14:
+the  Alice  couldn't lift his  Emily  because # he # was so weak.
+he was so weak.
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 15:
+the  Alice  couldn't lift his  Emily  because # he # was so heavy.
+he was so heavy.
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 16:
+the  Alice  crashed right through the  Emily  because # it # was made of steel.
+it was made of steel.
+Word:'crashed' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 17:
+the  Alice  crashed right through the  Emily  because # it # was made of styrofoam.
+it was made of styrofoam.
+Word:'crashed' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 18:
+ Alice  couldn't see the stage with  Emily  in front of him because # he # is so short.
+he is so short.
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 19:
+ Alice  couldn't see the stage with  Emily  in front of him because # he # is so tall.
+he is so tall.
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 20:
+ Alice  threw his schoolbag down to  Emily  after # he # reached the top of the stairs.
+he reached the top of the stairs.
+Word:'threw' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 21:
+ Alice  threw his schoolbag down to  Emily  after # he # reached the bottom of the stairs.
+he reached the bottom of the stairs.
+Word:'threw' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 22:
+although they ran at about the same speed,  Alice  beat  Emily  because # she # had such a good start.
+she had such a good start.
+Word:'beat' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 23:
+although they ran at about the same speed,  Alice  beat  Emily  because # she # had such a bad start.
+she had such a bad start.
+Word:'beat' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 24:
+the  Alice  rolled off the  Emily  because # it # wasn't anchored.
+it wasn't anchored.
+Word:'rolled' was not found in the knowledge database.
+Word:'anchored' was not found in the knowledge database.
+[1, -1, 1, 1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 25:
+the  Alice  rolled off the  Emily  because # it # wasn't level.
+it wasn't level.
+Word:'rolled' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, -1, 1, 1]
+PN correct!
+a a a b
+######
+######
+Question 26:
+sam's drawing was hung just above tina's and # it # did look much better with another one below it.
+it did look much better
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 27:
+sam's drawing was hung just above tina's and # it # did look much better with another one above it.
+it did look much better
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 28:
+ Alice  did a lot better than her good friend  Emily  on the test because # she # had studied so hard.
+she had studied so hard.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 29:
+ Alice  did a lot worse than her good friend  Emily  on the test because # she # had studied so hard.
+she had studied so hard.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 30:
+the  Alice  arrived after the  Emily  because # they # were coming from so far away.
+they were coming from so far away.
+Word:'arrived' was not found in the knowledge database.
+Word:'coming' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 31:
+the  Alice  arrived before the  Emily  because # they # were coming from so far away.
+they were coming from so far away.
+Word:'arrived' was not found in the knowledge database.
+Word:'coming' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 32:
+ Alice  was upset with  Emily  because the toaster # he # had bought from him didn't work.
+he had bought
+Word:'upset' was not found in the knowledge database.
+Word:'did' was not found in the knowledge database.
+[1, -1, -1, 1]
+PN correct!
+rft correct!
+b a b a
+######
+######
+Question 33:
+ Alice  was upset with  Emily  because the toaster # he # had sold him didn't work.
+he had sold
+Word:'upset' was not found in the knowledge database.
+Word:'did' was not found in the knowledge database.
+[1, -1, -1, 1]
+svm correct!
+guss correct!
+b a b b
+######
+######
+Question 34:
+ Alice  yelled at  Emily  because # he # was so upset.
+he was so upset.
+Word:'yelled' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 35:
+ Alice  comforted  Emily  because # he # was so upset.
+he was so upset.
+Word:'comforted' was not found in the knowledge database.
+[1, 1, -1, -1]
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 36:
+the  Alice  had been placed abovethe  Emily , so # it # had to be moved first.
+it had to be moved first.
+Word:'placed' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 37:
+the  Alice  had been placed belowthe  Emily , so # it # had to be moved first.
+it had to be moved first.
+Word:'placed' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 38:
+ Alice  envies  Emily  although # he # is very successful.
+he is very successful.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 39:
+ Alice  envies  Emily  because # he # is very successful.
+he is very successful.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 40:
+the  Alice  were bullying the younger ones, so we punished # them # .
+themwe punished 
+Word:'punished' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 41:
+the  Alice  were bullying the younger ones, so we rescued # them # .
+themwe rescued 
+Word:'rescued' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 42:
+i poured water from the  Alice  into the  Emily  until # it # was empty.
+it was empty
+Word:'poured' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 43:
+i poured water from the  Alice  into the  Emily  until # it # was full.
+it was full
+Word:'poured' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 44:
+ Alice  knows all about  Emily 's personal problems because # she # is nosy.
+she is nosy
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 45:
+ Alice  knows all about  Emily 's personal problems because # she # is indiscreet.
+she is indiscreet
+Word:'is' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 46:
+ Alice  explained his theory to  Emily  but # he # couldn't convince him.
+he couldn't convince him.
+Word:'convince' was not found in the knowledge database.
+[1, -1, -1, -1]
+b b b a
+######
+######
+Question 47:
+ Alice  explained his theory to  Emily  but # he # couldn't understand him.
+he couldn't understand him.
+[1, -1, -1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 48:
+ Alice  knew that  Emily 's son had been in a car accident, so # she # told her about it.
+she told
+Word:'been' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 49:
+ Alice  knew that  Emily 's son had been in a car accident, because # she # told her about it.
+she told
+Word:'been' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 50:
+joe's uncle can still beat him at tennis, even though # he # is 30 years younger.
+he is 30 years younger.
+Word:'beat' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 51:
+joe's uncle can still beat him at tennis, even though # he # is 30 years older.
+he is 30 years older.
+Word:'beat' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 52:
+the painting in mark's living room shows an oak tree. # it # is to the right of the bookcase.
+it is to the right
+Word:'shows' was not found in the knowledge database.
+Word:'is' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 53:
+the painting in mark's living room shows an oak tree. # it # is to the right of a house.
+it is to the right
+Word:'shows' was not found in the knowledge database.
+Word:'is' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 54:
+there is a gap in the wall. you can see the garden through # it # .
+itthrough 
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 55:
+there is a gap in the wall. you can see the garden behind # it # .
+itbehind 
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 56:
+the drain is clogged with hair. # it # has to be cleaned.
+it has to be cleaned.
+Word:'clogged' was not found in the knowledge database.
+Word:'cleaned' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 57:
+the drain is clogged with hair. # it # has to be removed.
+it has to be removed.
+Word:'clogged' was not found in the knowledge database.
+Word:'removed' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 58:
+my meeting started at 4:00 and i needed to catch the train at 4:30, so there wasn't much time. luckily, # it # was short, so it worked out.
+it was short
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 59:
+my meeting started at 4:00 and i needed to catch the train at 4:30, so there wasn't much time. luckily, # it # was delayed, so it worked out.
+it was delayed
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 60:
+there is a pillar between me and the stage, and i can't see around # it # .
+itsee around 
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 61:
+there is a pillar between me and the stage, and i can't see # it # .
+itsee 
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 62:
+they broadcast an announcement, but a subway came into the station and i couldn't hear # it # .
+ithear 
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 63:
+they broadcast an announcement, but a subway came into the station and i couldn't hear over # it # .
+ithear over 
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 64:
+in the middle of the outdoor concert, the rain started falling, but # it # continued until 10.
+it continued
+Word:'falling' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 65:
+in the middle of the outdoor concert, the rain started falling, and # it # continued until 10.
+it continued
+Word:'falling' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 66:
+i used an old rag to clean the knife, and then i put # it # in the trash.
+itput in the trash.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 67:
+i used an old rag to clean the knife, and then i put # it # in the drawer.
+itput in the drawer.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 68:
+ann asked mary what time the library closes, because # she # had forgotten.
+she had forgotten.
+Word:'forgotten' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 69:
+ann asked mary what time the library closes, but # she # had forgotten.
+she had forgotten.
+Word:'forgotten' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 70:
+i took the water bottle out of the backpack so that # it # would be handy.
+it would be handy
+Word:'took' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 71:
+i took the water bottle out of the backpack so that # it # would be lighter.
+it would be lighter
+Word:'took' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 72:
+i couldn't put the pot on the shelf because # it # was too tall.
+it was too tall.
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 73:
+i couldn't put the pot on the shelf because # it # was too high.
+it was too high.
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 74:
+i'm sure that my map will show this building; # it # is very good.
+it is very good
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 75:
+i'm sure that my map will show this building; # it # is very famous.
+it is very famous
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 76:
+bob paid for charlie's college education. # he # is very generous.
+he is very generous.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 77:
+bob paid for charlie's college education. # he # is very grateful.
+he is very grateful.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 78:
+bob paid for charlie's college education, but now charlie acts as thoughit never happened. # he # is very hurt.
+he is very hurt.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 79:
+bob paid for charlie's college education, but now charlie acts as thoughit never happened. # he # is very ungrateful.
+he is very ungrateful.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 80:
+bob was playing cards with adam and was way ahead. if adam hadn't had asudden run of good luck, # he # would have won.
+he would have won.
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 81:
+bob was playing cards with adam and was way ahead. if adam hadn't had asudden run of good luck, # he # would have lost.
+he would have lost.
+[-1, 1, 1, -1]
+a a a b
+######
+######
+Question 82:
+adam can't leave work here until bob arrives to replace him. if bob had left home for work on time, # he # would be gone by this time.
+he would be gone
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 83:
+adam can't leave work here until bob arrives to replace him. if bob had left home for work on time, # he # would be here by this time.
+he would be here
+Word:'be' was not found in the knowledge database.
+[-1, 1, 1, -1]
+a a a b
+######
+######
+Question 84:
+if the con artist has succeeded in fooling sam, # he # would have gotten a lot of money.
+he would have gotten a lot of money.
+Word:'fooling' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 85:
+if the con artist has succeeded in fooling sam, # he # would have lost a lot of money.
+he would have lost a lot of money.
+Word:'fooling' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 86:
+it was a summer afternoon, and the dog was sitting in the middle of thelawn. after a while, it got up and moved to a spot under the tree, because # it # was hot.
+it was hot
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 87:
+it was a summer afternoon, and the dog was sitting in the middle of thelawn. after a while, it got up and moved to a spot under the tree, because # it # was cooler.
+it was cooler
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 88:
+the cat was lying by the mouse hole waiting for the mouse, but # it # was too impatient.
+it was too impatient.
+Word:'waiting' was not found in the knowledge database.
+[1, 1, -1, -1]
+PN correct!
+b b b a
+######
+######
+Question 89:
+the cat was lying by the mouse hole waiting for the mouse, but # it # was too cautious.
+it was too cautious.
+Word:'waiting' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 90:
+anne gave birth to a daughter last month. # she # is a very charming woman.
+she is a very charming woman.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 91:
+anne gave birth to a daughter last month. # she # is a very charming baby.
+she is a very charming baby.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 92:
+alice tried frantically to stop her daughter from chatting atthe party, leaving us to wonder why # she # was behaving so strangely.
+she was behaving so strangely.
+Word:'wonder' was not found in the knowledge database.
+Word:'behaving' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 93:
+alice tried frantically to stop her daughter from barking atthe party, leaving us to wonder why # she # was behaving so strangely.
+she was behaving so strangely.
+Word:'wonder' was not found in the knowledge database.
+Word:'behaving' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 94:
+i saw jim yelling at some guy in a military uniform with a huge red beard. i don't know why # he # was, but he looked very unhappy.
+hewhy was
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 95:
+i saw jim yelling at some guy in a military uniform with a huge red beard. i don't know who # he # was, but he looked very unhappy.
+hewho was
+[-1, 1, 1, -1]
+a a a b
+######
+######
+Question 96:
+the fish ate the worm. # it # was hungry.
+it was hungry.
+Word:'ate' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 97:
+the fish ate the worm. # it # was tasty.
+it was tasty.
+Word:'ate' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 98:
+i was trying to open the lock with the key, but someone had filled the keyhole with chewing gum, and i couldn't get # it # in.
+iti couldn't get in.
+[-1, 1, -1, 1]
+PN correct!
+svm correct!
+rft correct!
+a a b a
+######
+######
+Question 99:
+i was trying to open the lock with the key, but someone had filled the keyhole with chewing gum, and i couldn't get # it # out.
+iti couldn't get out.
+[-1, 1, -1, 1]
+guss correct!
+a a b b
+######
+######
+Question 100:
+the dog chased the cat, which ran up a tree. # it # waited at the bottom.
+it waited
+Word:'ran' was not found in the knowledge database.
+Word:'waited' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 101:
+the dog chased the cat, which ran up a tree. # it # waited at the top.
+it waited
+Word:'ran' was not found in the knowledge database.
+Word:'waited' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 102:
+in the storm, the tree fell down and crashed through the roof of my house. now, i have to get # it # removed.
+itget removed.
+Word:'removed' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 103:
+in the storm, the tree fell down and crashed through the roof of my house. now, i have to get # it # repaired.
+itget repaired.
+Word:'repaired' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 104:
+the customer walked into the bank and stabbed one of the tellers. # he # was immediately taken to the police station.
+he was immediately taken
+Word:'stabbed' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 105:
+the customer walked into the bank and stabbed one of the tellers. # he # was immediately taken to the hospital.
+he was immediately taken
+Word:'stabbed' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 106:
+john was doing research in the library when he heard a man humming and whistling. # he # was very annoyed.
+he was very annoyed.
+[1, 1, -1, -1]
+PN correct!
+b b b a
+######
+######
+Question 107:
+john was doing research in the library when he heard a man humming and whistling. # he # was very annoying.
+he was very annoying.
+Word:'annoying' was not found in the knowledge database.
+[1, 1, -1, -1]
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 108:
+john was jogging through the park when he saw a man juggling watermelons. # he # was very impressed.
+he was very impressed.
+Word:'juggling' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 109:
+john was jogging through the park when he saw a man juggling watermelons. # he # was very impressive.
+he was very impressive.
+Word:'juggling' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 110:
+bob collapsed on the sidewalk. soon he saw carl coming to help. # he # was very ill.
+he was very ill
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 111:
+bob collapsed on the sidewalk. soon he saw carl coming to help. # he # was very concerned.
+he was very concerned
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 112:
+sam and amy are passionately in love, but amy's parents are unhappyabout it, because # they # are fifteen.
+they are fifteen.
+Word:'are' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 113:
+sam and amy are passionately in love, but amy's parents are unhappyabout it, because # they # are snobs.
+they are snobs.
+Word:'are' was not found in the knowledge database.
+Word:'are' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 114:
+mark told pete many lies about himself, which pete included in his book. # he # should have been more  truthful.
+he should have been more  truthful.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 115:
+mark told pete many lies about himself, which pete included in his book. # he # should have been more  skeptical.
+he should have been more skeptical.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 116:
+joe has sold his house and bought a new one a few miles away. he willbe moving out of # it # on thursday.
+itmoving out of 
+Word:'moving' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 117:
+joe has sold his house and bought a new one a few miles away. he willbe moving into # it # on thursday.
+itmoving into 
+Word:'moving' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 118:
+many people start to read paul's books and can't put them down. # they # are gripped because paul writes so well.
+they are gripped
+Word:'gripped' was not found in the knowledge database.
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 119:
+many people start to read paul's books and can't put them down. # they # are popular because paul writes so well.
+they are popular
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 120:
+mary took out her flute and played one of her favorite pieces. shehas had # it # since she was a child.
+itshe has had 
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 121:
+mary took out her flute and played one of her favorite pieces. shehas loved # it # since she was a child.
+itshe has loved 
+Word:'loved' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 122:
+sam pulled up a chair to the piano, but # it # was broken, so he had to stand instead.
+it was broken
+Word:'pulled' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 123:
+sam pulled up a chair to the piano, but # it # was broken, so he had to sing instead.
+it was broken
+Word:'pulled' was not found in the knowledge database.
+Word:'sing' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 124:
+since it was raining, i carried the newspaper in my backpack to keep # it # dry.
+itkeep dry
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 125:
+since it was raining, i carried the newspaper over my backpack to keep # it # dry.
+itkeep dry
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 126:
+sara borrowed the book from the library because she needs it for anarticle she is working on. she reads # it # when she gets home from work.
+itshe reads 
+Word:'reads' was not found in the knowledge database.
+Word:'gets' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 127:
+sara borrowed the book from the library because she needs it for anarticle she is working on. she writes # it # when she gets home from work.
+itshe writes 
+Word:'writes' was not found in the knowledge database.
+Word:'gets' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 128:
+this morning, joey built a sand castle on the beach, and put a toy flag in the highest tower, but this afternoon the tide knocked # it # down.
+itknocked down
+Word:'knocked' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 129:
+this morning, joey built a sand castle on the beach, and put a toy flag in the highest tower, but this afternoon the wind knocked # it # down.
+itknocked down
+Word:'knocked' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 130:
+jane knocked on susan's door, but there was no answer. # she # was disappointed.
+she was disappointed.
+Word:'was' was not found in the knowledge database.
+Word:'disappointed' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 131:
+jane knocked on susan's door, but there was no answer. # she # was out.
+she was out.
+Word:'was' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 132:
+jane knocked on the door, and susan answered it. # she # invited her to come out.
+she invited
+Word:'answered' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 133:
+jane knocked on the door, and susan answered it. # she # invited her to come in.
+she invited
+Word:'answered' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 134:
+sam took french classes from adam, because # he # was eager to speak it fluently.
+he was eager
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 135:
+sam took french classes from adam, because # he # was known to speak it fluently.
+he was known to speak it
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 136:
+the path to the lake was blocked, so we couldn't use # it # .
+ituse 
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 137:
+the path to the lake was blocked, so we couldn't reach # it # .
+itreach 
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 138:
+the sun was covered by a thick cloud all morning, but luckily, by the timethe picnic started, # it # was out.
+it was out
+Word:'started' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 139:
+the sun was covered by a thick cloud all morning, but luckily, by the timethe picnic started, # it # was gone.
+it was gone
+Word:'started' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 140:
+we went to the lake, because a shark had been seen at the ocean beach, so # it # was a safer place to swim.
+it was a safer place
+Word:'swim' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 141:
+we went to the lake, because a shark had been seen at the ocean beach, so # it # was a dangerous place to swim.
+it was a dangerous place
+Word:'swim' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 142:
+sam tried to paint a picture of shepherds with sheep, but # they # ended up looking more like golfers.
+they ended up looking more like golfers.
+Word:'paint' was not found in the knowledge database.
+Word:'looking' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 143:
+sam tried to paint a picture of shepherds with sheep, but # they # ended up looking more like dogs.
+they ended up looking more like dogs.
+Word:'paint' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 144:
+mary tucked her daughter anne into bed, so that # she # could work.
+she could work
+Word:'tucked' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 145:
+mary tucked her daughter anne into bed, so that # she # could sleep.
+she could sleep.
+Word:'tucked' was not found in the knowledge database.
+Word:'sleep' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 146:
+fred and alice had very warm down coats, but # they # were not prepared for the cold in alaska.
+they were not prepared
+Word:'prepared' was not found in the knowledge database.
+[1, -1, 1, -1]
+PN correct!
+svm correct!
+guss correct!
+a b a a
+######
+######
+Question 147:
+fred and alice had very warm down coats, but # they # were not enough for the cold in alaska.
+they were not enough
+Word:'were' was not found in the knowledge database.
+[1, -1, 1, 1]
+PN correct!
+a a a b
+######
+######
+Question 148:
+thomson visited cooper's grave in 1765. at that date # he # had been travelling for five years.
+he had been travelling
+Word:'visited' was not found in the knowledge database.
+Word:'travelling' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 149:
+thomson visited cooper's grave in 1765. at that date # he # had been dead for five years.
+he had been dead
+Word:'visited' was not found in the knowledge database.
+[1, 1, -1, -1]
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 150:
+jackson was greatly influenced by arnold, though # he # lived two centuries later.
+he lived two centuries later.
+Word:'influenced' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 151:
+jackson was greatly influenced by arnold, though # he # lived two centuries earlier.
+he lived two centuries earlier.
+Word:'influenced' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 152:
+i can't cut that tree down with that axe; # it # is too thick.
+it is too thick.
+[-1, 1, 1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 153:
+i can't cut that tree down with that axe; # it # is too small.
+it is too small.
+[-1, 1, 1, -1]
+a a a b
+######
+######
+Question 154:
+the foxes are getting in at night and attacking the chickens. i shall haveto kill # them # .
+themto kill 
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 155:
+the foxes are getting in at night and attacking the chickens. i shall haveto guard # them # .
+themto guard 
+Word:'haveto' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 156:
+the foxes are getting in at night and attacking the chickens. # they # have gotten very bold.
+they have gotten very bold.
+Word:'attacking' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 157:
+the foxes are getting in at night and attacking the chickens. # they # have gotten very nervous.
+they have gotten very nervous.
+Word:'attacking' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 158:
+fred covered his eyes with his hands, because the wind was blowing sandaround. he opened # them # when the wind stopped.
+themopened 
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 159:
+fred covered his eyes with his hands, because the wind was blowing sandaround. he lowered # them # when the wind stopped.
+themlowered 
+Word:'lowered' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 160:
+the actress used to be named terpsichore, but she changed it to tina a few years ago, because she figured # it # was too hard to pronounce.
+it was too hard
+Word:'figured' was not found in the knowledge database.
+Word:'pronounce' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 161:
+the actress used to be named terpsichore, but she changed it to tina a few years ago, because she figured # it # was easier to pronounce.
+it was easier
+Word:'figured' was not found in the knowledge database.
+Word:'pronounce' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 162:
+fred watched tv while george went out to buy groceries. after an hour # he # got up.
+he got up.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 163:
+fred watched tv while george went out to buy groceries. after an hour # he # got back.
+he got back.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 164:
+fred was supposed to run the dishwasher, but he put it off,  becausehe wanted to watch tv. but the show turned out to be boring, so hechanged his mind and turned # it # on.
+itturned on
+Word:'turned' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 165:
+fred was supposed to run the dishwasher, but he put it off,  becausehe wanted to watch tv. but the show turned out to be boring, so hechanged his mind and turned # it # off.
+itturned off
+Word:'turned' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 166:
+fred is the only man still alive who remembers my great-grandfather. # he # is a remarkable man.
+he is a remarkable man.
+Word:'remembers' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 167:
+fred is the only man still alive who remembers my great-grandfather. # he # was a remarkable man.
+he was a remarkable man.
+Word:'remembers' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 168:
+fred is the only man alive who still remembers my father as an infant.when fred first saw my father, # he # was twelve years old.
+he was twelve years old.
+Word:'saw' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 169:
+fred is the only man alive who still remembers my father as an infant.when fred first saw my father, # he # was twelve months old.
+he was twelve months old.
+Word:'saw' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 170:
+in july, kamtchatka declared war on yakutsk. since yakutsk's army was much better equipped and ten times larger, # they # were defeated within weeks.
+they were defeated
+Word:'defeated' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 171:
+in july, kamtchatka declared war on yakutsk. since yakutsk's army was much better equipped and ten times larger, # they # were victorious within weeks.
+they were victorious
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 172:
+look! there is a minnow swimming right below that duck! # it # had better get away to safety fast!
+it had better get away
+Word:'is' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 173:
+look! there is a shark swimming right below that duck! # it # had better get away to safety fast!
+it had better get away
+Word:'is' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 174:
+archaeologists have concluded that humans lived in laputa 20,000 years ago. # they # hunted for evidence on the river banks.
+they hunted for evidence
+Word:'hunted' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 175:
+archaeologists have concluded that humans lived in laputa 20,000 years ago. # they # hunted for deer on the river banks.
+they hunted for deer
+Word:'hunted' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 176:
+the scientists are studying three species of fish that have recentlybeen found living in the indian ocean. # they # began two years ago.
+they began two years ago.
+Word:'began' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 177:
+the scientists are studying three species of fish that have recentlybeen found living in the indian ocean. # they # appeared two years ago.
+they appeared two years ago.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 178:
+the journalists interviewed the stars of the new movie. # they # were very persistent, so the interview lasted for a long time.
+they were very persistent
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 179:
+the journalists interviewed the stars of the new movie. # they # were very cooperative, so the interview lasted for a long time.
+they were very cooperative
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 180:
+the police arrested all of the gang members. # they # were trying to stop the drug trade in the neighborhood.
+they were trying to stop the drug trade.
+Word:'arrested' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 181:
+the police arrested all of the gang members. # they # were trying to run the drug trade in the neighborhood.
+they were trying to run the drug trade.
+Word:'arrested' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 182:
+i put the cake away in the refrigerator. # it # has a lot of butter in it.
+it has a lot of butter
+Word:'has' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 183:
+i put the cake away in the refrigerator. # it # has a lot of leftovers in it.
+it has a lot of leftovers
+Word:'has' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 184:
+sam broke both his ankles and he's walking with crutches. but a monthor so from now # they # should be better.
+they should be better
+Word:'walking' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 185:
+sam broke both his ankles and he's walking with crutches. but a monthor so from now # they # should be unnecessary.
+they should be unnecessary
+Word:'walking' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 186:
+when the sponsors of the bill got to the town hall, they were surprisedto find that the room was full of opponents. # they # were very much in the minority.
+they were very much in the minority.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 187:
+when the sponsors of the bill got to the town hall, they were surprisedto find that the room was full of opponents. # they # were very much in the majority.
+they were very much in the majority.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 188:
+everyone really loved the oatmeal cookies; only a few people liked the chocolate chip cookies. next time, we should make more of # them # .
+themmore of 
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 189:
+everyone really loved the oatmeal cookies; only a few people liked the chocolate chip cookies. next time, we should make fewer of # them # .
+themfewer of 
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 190:
+we had hoped to place copies of our newsletter on all the chairs in theauditorium, but there were simply not enough of # them # .
+themnot enough of 
+Word:'were' was not found in the knowledge database.
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 191:
+we had hoped to place copies of our newsletter on all the chairs in theauditorium, but there were simply too many of # them # .
+themtoo many of 
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 192:
+i stuck a pin through a carrot. when i pulled the pin out, # it # left a hole.
+it left a hole
+Word:'pulled' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 193:
+i stuck a pin through a carrot. when i pulled the pin out, # it # had a hole.
+it had a hole
+Word:'pulled' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 194:
+i couldn't find a spoon, so i tried using a pen to stir my coffee. but that turned out to be a bad idea, because # it # got full of coffee.
+it got full of coffee.
+[-1, 1, -1, 1]
+PN correct!
+svm correct!
+rft correct!
+a a b a
+######
+######
+Question 195:
+i couldn't find a spoon, so i tried using a pen to stir my coffee. but that turned out to be a bad idea, because # it # got full of ink.
+it got full of ink.
+[-1, 1, -1, 1]
+guss correct!
+a a b b
+######
+######
+Question 196:
+steve follows fred's example in everything. # he # admires him hugely.
+he admires him hugely.
+Word:'follows' was not found in the knowledge database.
+[1, 1, -1, -1]
+PN correct!
+b b b a
+######
+######
+Question 197:
+steve follows fred's example in everything. # he # influences him hugely.
+he influences him hugely.
+Word:'follows' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 198:
+the table won't fit through the doorway because # it # is too wide.
+it is too wide.
+[-1, 1, -1, 1]
+PN correct!
+svm correct!
+rft correct!
+a a b a
+######
+######
+Question 199:
+the table won't fit through the doorway because # it # is too narrow.
+it is too narrow.
+[-1, 1, -1, -1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+######
+Question 200:
+grace was happy to trade me her sweater for my jacket. she thinks # it # looks dowdy on her.
+it looks dowdy on her.
+Word:'thinks' was not found in the knowledge database.
+Word:'dowdy' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 201:
+grace was happy to trade me her sweater for my jacket. she thinks # it # looks great on her.
+it looks great on her.
+Word:'thinks' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 202:
+john hired bill to take care of # him # .
+himtake care of 
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 203:
+john hired himself out to bill to take care of # him # .
+himtake care of 
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 204:
+john promised bill to leave, so an hour later # he # left.
+he left
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 205:
+john ordered bill to leave, so an hour later # he # left.
+he left
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 206:
+sam goodman's biography of the spartan general xenophanesconveys a vivid sense of the difficulties # he # faced in his research.
+hedifficulties faced
+Word:'faced' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 207:
+sam goodman's biography of the spartan general xenophanesconveys a vivid sense of the difficulties # he # faced in his childhood.
+hedifficulties faced
+Word:'faced' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 208:
+emma's mother had died long ago, and # her # education had been managed by an excellent woman as governess.
+her education
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 209:
+emma's mother had died long ago, and # her # place had been taken by an excellent woman as governess.
+her place
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 210:
+jane knocked on susan's door but # she # did not get an answer.
+she did not get an answer.
+Word:'knocked' was not found in the knowledge database.
+[1, -1, 1, -1]
+PN correct!
+svm correct!
+guss correct!
+a b a a
+######
+######
+Question 211:
+jane knocked on susan's door but # she # did not answer.
+she did not answer.
+Word:'knocked' was not found in the knowledge database.
+Word:'answer' was not found in the knowledge database.
+[1, -1, 1, -1]
+rft correct!
+a b a b
+######
+######
+Question 212:
+joe paid the detective after # he # received the final report on the case.
+he received the final report
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 213:
+joe paid the detective after # he # delivered the final report on the case.
+he delivered the final report
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 214:
+beth didn't get angry with sally, who had cut her off, because # she # stopped and counted to ten.
+she stopped
+Word:'ten' was not found in the knowledge database.
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 215:
+beth didn't get angry with sally, who had cut her off, because # she # stopped and apologized.
+she stopped
+Word:'apologized' was not found in the knowledge database.
+[-1, 1, 1, -1]
+a a a b
+######
+######
+Question 216:
+jim signaled the barman and gestured toward # his # empty glass
+his empty glass
+Word:'gestured' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 217:
+jim signaled the barman and gestured toward # his # bathroom key.
+his bathroom key
+Word:'gestured' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 218:
+dan took the rear seat while bill claimed the front because # his # "dibs!" was slow.
+his "dibs!"
+Word:'claimed' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 219:
+dan took the rear seat while bill claimed the front because # his # "dibs!" was quicker.
+his "dibs!"
+Word:'claimed' was not found in the knowledge database.
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 220:
+tom said "check" to ralph as he moved # his # bishop.
+his bishop
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 221:
+tom said "check" to ralph as he took # his # bishop.
+his bishop
+Word:'took' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 222:
+as andrea in the crop duster passed over susan, # she # could see the landing strip.
+she could see
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 223:
+as andrea in the crop duster passed over susan, # she # could see the landing gear.
+she could see
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 224:
+tom gave ralph a lift to school so # he # wouldn't have to drive alone.
+he wouldn't have to drive alone.
+Word:'gave' was not found in the knowledge database.
+Word:'drive' was not found in the knowledge database.
+[1, -1, 1, 1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 225:
+tom gave ralph a lift to school so # he # wouldn't have to walk.
+he wouldn't have to walk.
+Word:'gave' was not found in the knowledge database.
+[1, -1, 1, 1]
+PN correct!
+a a a b
+######
+######
+Question 226:
+bill passed the half-empty plate to john because # he # was full.
+he was full.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 227:
+bill passed the half-empty plate to john because # he # was hungry.
+he was hungry
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 228:
+bill passed the gameboy to john because # his # turn was over.
+his turn
+Word:'was' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 229:
+bill passed the gameboy to john because # his # turn was next.
+his turn
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 230:
+the man lifted the boy onto # his # shoulders.
+his shoulders
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 231:
+the man lifted the boy onto # his # bunk bed.
+his bunk bed.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 232:
+stretching # her # back, the woman smiled at the girl.
+her back
+Word:'stretching' was not found in the knowledge database.
+Word:'smiled' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 233:
+patting # her # back, the woman smiled at the girl.
+her back
+Word:'patting' was not found in the knowledge database.
+Word:'smiled' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 234:
+billy cried because toby wouldn't accept # his # toy.
+his toy
+Word:'accept' was not found in the knowledge database.
+[-1, 1, -1, 1]
+PN correct!
+svm correct!
+rft correct!
+a a b a
+######
+######
+Question 235:
+billy cried because toby wouldn't share # his # toy.
+his toy
+Word:'cried' was not found in the knowledge database.
+[-1, 1, -1, 1]
+guss correct!
+a a b b
+######
+######
+Question 236:
+lily spoke to donna, breaking # her # silence.
+her silence.
+Word:'breaking' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 237:
+lily spoke to donna, breaking # her # concentration.
+her concentration.
+Word:'breaking' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 238:
+when tommy dropped his ice cream, timmy giggled, so father gave # him # a sympathetic look.
+himgave 
+Word:'gave' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 239:
+when tommy dropped his ice cream, timmy giggled, so father gave # him # a stern look.
+himgave 
+Word:'gave' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 240:
+as ollie carried tommy up the long winding steps, # his # legs ached.
+his legs ached.
+Word:'ached' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 241:
+as ollie carried tommy up the long winding steps, # his # legs dangled.
+his legs dangled.
+Word:'dangled' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 242:
+the father carried the sleeping boy in # his # arms
+his arms
+Word:'sleeping' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 243:
+the father carried the sleeping boy in # his # bassinet.
+his bassinet.
+Word:'sleeping' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 244:
+the woman held the girl against # her # chest
+her chest.
+Word:'held' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 245:
+the woman held the girl against # her # will.
+her will
+Word:'held' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 246:
+pam's parents came home and found her having sex with her boyfriend, paul. # they # were furious about it.
+they were furious
+Word:'having' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 247:
+pam's parents came home and found her having sex with her boyfriend, paul. # they # were embarrassed about it.
+they were embarrassed
+Word:'having' was not found in the knowledge database.
+Word:'embarrassed' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 248:
+dr. adams informed kate that # she # had retired and presented several options for future treatment.
+she had retired
+Word:'informed' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 249:
+dr. adams informed kate that # she # had cancer and presented several options for future treatment.
+she had cancer
+Word:'informed' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 250:
+dan had to stop bill from toying with the injured bird. # he # is very compassionate.
+he is very compassionate.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 251:
+dan had to stop bill from toying with the injured bird. # he # is very cruel.
+he is very cruel.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 252:
+george got free tickets to the play, but he gave them to eric, even though # he # was particularly eager to see it.
+he was particularly eager
+Word:'gave' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 253:
+george got free tickets to the play, but he gave them to eric, because # he # was particularly eager to see it.
+he was particularly eager
+Word:'gave' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 254:
+george got free tickets to the play, but he gave them to eric, because # he # was not particularly eager to see it.
+he was not particularly eager
+Word:'gave' was not found in the knowledge database.
+[1, -1, 1, 1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 255:
+jane gave joan candy because # she # wasn't hungry.
+she wasn't hungry.
+Word:'gave' was not found in the knowledge database.
+[1, -1, 1, -1]
+PN correct!
+svm correct!
+guss correct!
+a b a a
+######
+######
+Question 256:
+jane gave joan candy because # she # was hungry.
+she was hungry.
+Word:'gave' was not found in the knowledge database.
+[1, 1, 1, -1]
+PN correct!
+a a a b
+######
+######
+Question 257:
+i tried to paint a picture of an orchard, with lemons in the lemon trees, but # they # came out looking more like light bulbs.
+they came out
+Word:'paint' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 258:
+i tried to paint a picture of an orchard, with lemons in the lemon trees, but # they # came out looking more like telephone poles.
+they came out
+Word:'paint' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 259:
+james asked robert for a favor but # he # was refused.
+he was refused.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 260:
+james asked robert for a favor but # he # refused.
+he refused.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 261:
+kirilov ceded the presidency to shatov because # he # was less popular.
+he was less popular.
+Word:'ceded' was not found in the knowledge database.
+[1, 1, -1, 1]
+svm correct!
+a b b a
+######
+######
+Question 262:
+kirilov ceded the presidency to shatov because # he # was more popular.
+he was more popular.
+Word:'ceded' was not found in the knowledge database.
+[1, 1, -1, 1]
+PN correct!
+rft correct!
+guss correct!
+a b b b
+######
+######
+Question 263:
+emma did not pass the ball to janie although # she # saw that she was open.
+she saw
+[-1, 1, 1, 1]
+guss correct!
+b b a a
+######
+######
+Question 264:
+emma did not pass the ball to janie although # she # was open.
+she was open
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 265:
+i put the butterfly wing on the table and # it # broke.
+it broke.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 266:
+i put the heavy book on the table and # it # broke.
+it broke.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 267:
+madonna fired her trainer because # she # couldn't stand her boyfriend.
+she couldn't stand
+Word:'fired' was not found in the knowledge database.
+[1, -1, 1, 1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 268:
+madonna fired her trainer because # she # slept with her boyfriend.
+she slept
+Word:'fired' was not found in the knowledge database.
+[1, 1, 1, 1]
+a a a b
+######
+######
+Question 269:
+madonna fired her trainer because she slept with # her # boyfriend.
+her boyfriend
+Word:'slept' was not found in the knowledge database.
+[1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 270:
+madonna fired her trainer because she couldn't stand # her # boyfriend.
+her boyfriend
+[-1, 1, 1, 1]
+PN correct!
+svm correct!
+rft correct!
+b b a b
+######
+######
+Question 271:
+carol believed that rebecca suspected that # she # had stolen the watch.
+she had stolen the watch.
+Word:'suspected' was not found in the knowledge database.
+Word:'stolen' was not found in the knowledge database.
+[1, 1, 1, -1]
+svm correct!
+rft correct!
+guss correct!
+a a a a
+######
+######
+Question 272:
+carol believed that rebecca regretted that # she # had stolen the watch.
+she had stolen the watch.
+Word:'regretted' was not found in the knowledge database.
+Word:'stolen' was not found in the knowledge database.
+[1, 1, -1, -1]
+svm correct!
+rft correct!
+guss correct!
+b b b b
+######
+PN: 145 53.1135531136
+svm: 141 51.6483516484
+gussian: 141 51.6483516484
+randomForestTree: 142 52.0146520147

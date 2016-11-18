@@ -240,6 +240,23 @@ class PositiveNegativeSolver(SolverBaseClass):
         features = self.extractFeatures(question)
         features = self.fixFeature(features)
 
+        txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])
+        for t in txt1_tags[::-1]:
+            if self.tagProcessor.isVerb(t):
+                prop = self.vbParser.parserV(t[0])
+                break
+            if self.tagProcessor.isAdj(t):
+                prop = self.vbParser.parserAdj(t[0])
+                break
+        txt1_tags = self.sentenceParser.makeTags(question[0]['txt2'])
+        for t in txt1_tags[::-1]:
+            if self.tagProcessor.isVerb(t):
+                prop = self.vbParser.parserV(t[0])
+                break
+            if self.tagProcessor.isAdj(t):
+                prop = self.vbParser.parserAdj(t[0])
+                break
+
         ans = 1
         print features
         for x in features:
