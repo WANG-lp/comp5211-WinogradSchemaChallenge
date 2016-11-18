@@ -31,7 +31,7 @@ class WordValue:
     def getWordValue(word, wordList):
         # def getValue:
         if word in wordList.keys():
-            return wordList(word)
+            return wordList[word]
         
         sim_dict = {}
         for kword in wordList.keys():
@@ -39,6 +39,7 @@ class WordValue:
             sim_dict[kword] = sim_value
         
         #sim_dict is a dict contains the similarity of new words compared with words in KB
+        #How to get the value of new word is still under consideration
         return 0
 
 class SolverBaseClass:
