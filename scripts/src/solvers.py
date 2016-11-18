@@ -15,7 +15,7 @@ class WordValue:
         syns1 = wordnet.synsets(UnkownWord)
         syns2 = wordnet.synsets(KBWord)
         sim_value = 0
-        if (len(syns1) == 0 || len(syns2) == 0):
+        if (len(syns1) == 0 or len(syns2) == 0):
             return 0
         
         for lemma1 in syns1:
