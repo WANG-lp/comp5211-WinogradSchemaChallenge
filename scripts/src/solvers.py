@@ -4,8 +4,9 @@ import string
 from input_parse import InputParser
 from common import TagProcessor
 from nltk_helper import SentenceParser
-from kb import WordParser
+from kb import WordParser, KB
 
+from sklearn import svm
 from nltk.corpus import wordnet
 
 
@@ -31,12 +32,13 @@ class SolverBaseClass:
         self.tagProcessor = TagProcessor()
         self.sentenceParser = SentenceParser()
         self.vbParser = WordParser()
+        kb = KB()
+        self.verbKB = kb.getVerbKB()
+        self.adjKB = kb.getAdjKB()
 
     def solver(self, question):
         return 'a'
 
-
-class PositiveNegativeSolver(SolverBaseClass):
     def mapAB(self, question):
         # question[0]['txt1'] = string.replace(question[0]['txt1'], question[2][0], ' A ')
         # question[0]['txt1'] = string.replace(question[0]['txt1'], question[2][1], ' B ')
@@ -55,7 +57,73 @@ class PositiveNegativeSolver(SolverBaseClass):
         if s1.find(question[2][0]) != -1:
             return 1
         return -1
+    def extractFeatures(self, question):
+        answer_order = self.mapAB(question)
+        txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])
+        txt1_positive = 1
+        if self.tagProcessor.isNegativeFromList(txt1_tags):
+            txt1_positive = -1
 
+        txt2_tags = self.sentenceParser.makeTags(question[0]['pron'] + " " + question[0]['txt2'])
+        txt2_positive = 1
+        if self.tagProcessor.isNegativeFromList(txt2_tags):
+            txt2_positive = -1
+
+        txt1_v = ''
+        txt1_prop = None
+        for v in txt1_tags[::-1]:
+            if self.tagProcessor.isVerb(v):
+                txt1_v = v
+                txt1_prop = self.verbKB[txt1_v]
+                break
+
+        txt2_v = ''
+        txt2_adj = ''
+        txt2_prop = None
+        for v in txt2_tags[::-1]:
+            if self.tagProcessor.isAdj(v):
+                txt2_adj = v
+                txt2_prop = self.adjKB[txt2_adj]
+                break
+
+        if txt2_prop is None:
+            for v in txt2_tags[::-1]:
+                if self.tagProcessor.isVerb(v):
+                    txt2_v = v
+                    txt2_prop = self.verbKB[txt1_v]
+                    break
+
+        return [txt1_positive, txt2_positive, txt1_prop, txt2_prop]
+
+class SVMSolver(SolverBaseClass):
+
+    def train(self, questionList):
+        featuresList = []
+        targetList  = []
+        for q in questionList:
+            features =  self.extractFeatures(q)
+            featuresList.append(features)
+            if q[-1] == 'a':
+                targetList.append(1)
+            else:
+                targetList.append(-1)
+        self.clf = svm.SVC()
+        self.clf.fit(featuresList, targetList)
+
+    def solver(self, question):
+        features = self.extractFeatures(question)
+
+        ans = self.clf.predict([features])
+        print ans
+        if ans == 1:
+            return 'a'
+        else:
+            return 'b'
+
+
+
+
+class PositiveNegativeSolver(SolverBaseClass):
     def solver(self, question):
         answer_order = self.mapAB(question)
         txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])

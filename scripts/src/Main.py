@@ -2,7 +2,7 @@ from input_parse import InputParser
 from common import TagProcessor
 from nltk_helper import SentenceParser
 from kb import WordParser
-from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver
+from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver
 
 if __name__ == "__main__":
 
@@ -16,16 +16,20 @@ if __name__ == "__main__":
     naiveSolver = SolverBaseClass()
     randomSolver = RandomSolver()
     pnSolver= PositiveNegativeSolver()
+    svmSolver = SVMSolver()
 
     total = 0
     correct = 0
-    for q in ques:
+
+    svmSolver.train(ques[:50])
+
+    for q in ques[50:]:
         #q = ques[4]
         print "#" * 6
         print "Question " + str(total) + ':'
         print q[0]['txt1'],'#', q[0]['pron'],'#', q[0]['txt2']
         print q[1]['pron'] + q[1]['quote1'] + " "+ q[1]['quote2']
-        ans = pnSolver.solver(q)
+        ans = svmSolver.solver(q)
 
         total += 1
         print ans, q[-1]
@@ -36,4 +40,5 @@ if __name__ == "__main__":
         #print randomSolver.solver(q), q[-1]
         print "#" * 6
         input = raw_input("press any key to continue.")
+    print correct, total
     print correct * 100.0 / total

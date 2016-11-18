@@ -7,13 +7,13 @@ class KB:
 
     def __init__(self, kb_dir="../KB/"):
         with open(kb_dir + "verb_list.txt") as f:
-            spamreader = csv.reader(f, delimiter=' ')
+            spamreader = csv.reader(f, delimiter=';')
             for row in spamreader:
-                self.verbKB[row[0]] = float(row[1])
+                self.verbKB[row[0].strip()] = float(row[1].strip())
         with open(kb_dir + "adj_list.txt") as f:
-            spamreader = csv.reader(f, delimiter=' ')
+            spamreader = csv.reader(f, delimiter=';')
             for row in spamreader:
-                self.adjKB[row[0]] = float(row[1])
+                self.adjKB[row[0].strip()] = float(row[1].strip())
 
     def getVerbKB(self):
         return self.verbKB
