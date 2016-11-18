@@ -13,30 +13,39 @@ from nltk.corpus import wordnet
 
 
 # Intput is the unknownword and a word in KB;
-class WordValue:
-    def getFeature(UnkownWord, KBWord):
-        syns1 = wordnet.synsets(UnkownWord)
-        syns2 = wordnet.synsets(KBWord)
-        sim_value = None
-        for lemma1 in syns1:
-            for lemma2 in syns2:
-                sim_value += lemma1.wup_similarity(lemma2)
 
-        sim_value = sim_value / (len(syns1) * len(syns2))
-        return sim_value
+def getFeature(UnkownWord, KBWord):
+    syns1 = wordnet.synsets(UnkownWord)
+    syns2 = wordnet.synsets(KBWord)
+    sim_value = 0
+    if (len(syns1) == 0 or len(syns2) == 0):
+        return 0
 
-    def getWordValue(word, wordList):
-        # def getValue:
-        if word in wordList.keys():
-            return wordList(word)
+    count = 1
+    for lemma1 in syns1:
+        for lemma2 in syns2:
+            if lemma1.wup_similarity(lemma2) is None:
+                sim_value = sim_value + 0
+            else:
+                sim_value = sim_value + lemma1.wup_similarity(lemma2)
+                count = count + 1
 
-        sim_dict = {}
-        for kword in wordList.keys():
-            sim_value = getFeature(word, kword)
-            sim_dict[kword] = sim_value
+    return (sim_value / count)
+
+
+# input the word you want to know and the KB dictionary.
+def getWordValue(word, wordList):
+    if word in wordList.keys():
+        return wordList[word]
+
+    sim_dict = {}
+    for kword in wordList.keys():
+        sim_value = getFeature(word, kword)
+        sim_dict[kword] = sim_value
 
         # sim_dict is a dict contains the similarity of new words compared with words in KB
-        return 0
+    returnK = max(sim_dict, key=sim_dict.get)
+    return wordList[returnK]
 
 
 class SolverBaseClass:
@@ -85,6 +94,7 @@ class SolverBaseClass:
             if x is None:
                 return True
         return False
+
     def fixFeature(self, features):
         res = []
         for f in features:
@@ -135,8 +145,9 @@ class SolverBaseClass:
                     break
         return [txt1_positive, txt2_positive, txt1_prop, txt2_prop]
 
+
 class RandomForestsSolver(SolverBaseClass):
-    def train(self, questionList, n_est = 6):
+    def train(self, questionList, n_est=6):
         featuresList = []
         targetList = []
         for q in questionList:
@@ -161,6 +172,8 @@ class RandomForestsSolver(SolverBaseClass):
         else:
             ans = self.clf.predict([features])[0]
             return self.returnAns(ans, features[0], features[1])
+
+
 class GussianSolver(SolverBaseClass):
     def train(self, questionList):
         featuresList = []
@@ -187,6 +200,7 @@ class GussianSolver(SolverBaseClass):
         else:
             ans = self.clf.predict([features])[0]
             return self.returnAns(ans, features[0], features[1])
+
 
 class SVMSolver(SolverBaseClass):
     def train(self, questionList):
@@ -216,6 +230,7 @@ class SVMSolver(SolverBaseClass):
         else:
             ans = self.clf.predict([features])[0]
             return self.returnAns(ans, features[0], features[1])
+
 
 class PositiveNegativeSolver(SolverBaseClass):
     def solver(self, question):
