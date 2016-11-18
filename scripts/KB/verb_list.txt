@@ -280,3 +280,7 @@ pulled;0.3
 playing;0.3
 came;0.3
 left;0.3
+ate;0.5
+conveys;0.6
+stretching;0.5
+patting;0.7

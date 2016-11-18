@@ -1,8 +1,14 @@
+import random
+
 from input_parse import InputParser
 from common import TagProcessor
 from nltk_helper import SentenceParser
 from kb import WordParser
-from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver
+from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver, RandomForestsSolver, GussianSolver
+
+def printC(c, total, msg):
+    print msg, c , c*100.0/total
+
 
 if __name__ == "__main__":
 
@@ -13,32 +19,56 @@ if __name__ == "__main__":
     tagT = TagProcessor()
     vbParser = WordParser()
 
-    naiveSolver = SolverBaseClass()
-    randomSolver = RandomSolver()
-    pnSolver= PositiveNegativeSolver()
+    #naiveSolver = SolverBaseClass()
+    #randomSolver = RandomSolver()
+    #pnSolver= PositiveNegativeSolver()
     svmSolver = SVMSolver()
+    rftSolver = RandomForestsSolver()
+    gussianSolver = GussianSolver()
 
     total = 0
-    correct = 0
+    correct_svm = 0
+    correct_rft = 0
+    correct_guss = 0
 
-    svmSolver.train(ques[:50])
+    random.shuffle(ques)
 
-    for q in ques[50:]:
+    trainSetSize = 120
+    svmSolver.train(ques[:trainSetSize])
+    rftSolver.train(ques[:trainSetSize], n_est= 6)
+    gussianSolver.train(ques[:trainSetSize])
+
+    for q in ques[trainSetSize:]:
         #q = ques[4]
         print "#" * 6
         print "Question " + str(total) + ':'
         print q[0]['txt1'],'#', q[0]['pron'],'#', q[0]['txt2']
         print q[1]['pron'] + q[1]['quote1'] + " "+ q[1]['quote2']
-        ans = svmSolver.solver(q)
-
+        ans_svm = svmSolver.solver(q)
+        if ans_svm == 'N/A':
+            continue
         total += 1
-        print ans, q[-1]
-        if ans == q[-1]:
-            print "correct!"
-            correct += 1
+
+        if ans_svm == q[-1]:
+            print "svm correct!"
+            correct_svm += 1
+
+        ans_rft = rftSolver.solver(q)
+        if ans_rft == q[-1]:
+            print "rft correct!"
+            correct_rft += 1
+
+        ans_guss = gussianSolver.solver(q)
+        if ans_guss == q[-1]:
+            print "guss correct!"
+            correct_guss += 1
+
+        print ans_svm, ans_rft, ans_guss, q[-1]
 
         #print randomSolver.solver(q), q[-1]
         print "#" * 6
         input = raw_input("press any key to continue.")
-    print correct, total
-    print correct * 100.0 / total
+
+    printC(correct_svm, total, "svm:")
+    printC(correct_svm, total, "gussian:")
+    printC(correct_rft, total, "randomForestTree:")

@@ -122,3 +122,6 @@ impatient;-1
 furious;-1
 tall;1
 annoyed;-1
+indiscreet;-1
+snobs;-1
+dowdy;-1
