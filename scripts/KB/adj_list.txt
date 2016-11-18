@@ -1,124 +1,124 @@
-remarkable 1
-less -1
-minnow -1
-sympathetic 1
-grateful 1
-surprisedto 1
-reluctant -1
-generous 1
-slow -1
-personal 0
-nervous -1
-concerned -1
-French 0
-better 1
-eager 1
-only -1
-victorious 1
-easier 1
-brown 0
-good 1
-worse -1
-wide 1
-Many 1
-famous 1
-lighter -1
-handy 1
-rear -1
-impressive 1
-skeptical -1
-like 1
-nosy -1
-compassionate 1
-unnecessary -1
-fewer -1
-large 1
-bad -1
-boring -1
-small -1
-heavy 1
-twelve 0
-old -1
-cooperative 1
-ten 0
-fish 0
-hard -1
-library 0
-Next 0
-rival -1
-longtime -1
-new 1
-belowthe -1
-red 0
-available 1
-sheep 0
-full 1
-bold -1
-weak -1
-free 1
-hung -1
-safer 1
-fifteen 0
-dead -1
-half-empty -1
-great 1
-cautious 1
-last 1
-many 1
-ill -1
-larger 1
-favorite 1
-oatmeal 0
-military -1
-narrow -1
-Indian 0
-unhappy -1
-stern -1
-thick -1
-open 1
-abovethe 1
-impressed 1
-vivid 1
-angry -1
-long 1
-next 0
-few -1
-much 1
-final 1
-empty -1
-more 1
-general 1
-successful 1
-hurt -1 
-atthe 0
-warm 1
-alive 1
-excellent 1
-highest 1
-ungrateful -1
-dangerous -1
-cruel -1
-future 1
-asudden 0
-happy 1
-persistent 1
-high 1
-tasty 1
-huge 1
-same 0
-hot 1
-several 1
-truthful 1
-injured -1
-sure 1
-popular 1
-charming 1
-younger 1
-short -1
-older -1
-upset -1
-hungry -1
-impatient -1
-furious -1
-tall 1
-annoyed -1
+remarkable;1
+less;-1
+minnow;-1
+sympathetic;1
+grateful;1
+surprisedto;1
+reluctant;-1
+generous;1
+slow;-1
+personal;0
+nervous;-1
+concerned;-1
+French;0
+better;1
+eager;1
+only;-1
+victorious;1
+easier;1
+brown;0
+good;1
+worse;-1
+wide;1
+Many;1
+famous;1
+lighter;-1
+handy;1
+rear;-1
+impressive;1
+skeptical;-1
+like;1
+nosy;-1
+compassionate;1
+unnecessary;-1
+fewer;-1
+large;1
+bad;-1
+boring;-1
+small;-1
+heavy;1
+twelve;0
+old;-1
+cooperative;1
+ten;0
+fish;0
+hard;-1
+library;0
+Next;0
+rival;-1
+longtime;-1
+new;1
+belowthe;-1
+red;0
+available;1
+sheep;0
+full;1
+bold;-1
+weak;-1
+free;1
+hung;-1
+safer;1
+fifteen;0
+dead;-1
+half-empty;-1
+great;1
+cautious;1
+last;1
+many;1
+ill;-1
+larger;1
+favorite;1
+oatmeal;0
+military;-1
+narrow;-1
+Indian;0
+unhappy;-1
+stern;-1
+thick;-1
+open;1
+abovethe;1
+impressed;1
+vivid;1
+angry;-1
+long;1
+next;0
+few;-1
+much;1
+final;1
+empty;-1
+more;1
+general;1
+successful;1
+hurt;-1;
+atthe;0
+warm;1
+alive;1
+excellent;1
+highest;1
+ungrateful;-1
+dangerous;-1
+cruel;-1
+future;1
+asudden;0
+happy;1
+persistent;1
+high;1
+tasty;1
+huge;1
+same;0
+hot;1
+several;1
+truthful;1
+injured;-1
+sure;1
+popular;1
+charming;1
+younger;1
+short;-1
+older;-1
+upset;-1
+hungry;-1
+impatient;-1
+furious;-1
+tall;1
+annoyed;-1
