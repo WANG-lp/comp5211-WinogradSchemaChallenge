@@ -1,282 +1,282 @@
-raining
-walking
-breaking
-managed
-barking
-cried
-show
-liked
-trade
-known
-sleep
-looks
-giggled
-suspected
-hunted
-help
-recentlybeen
-trying
-thank
-fit
-disappointed
-writes
-had
-knew
-haveto
-answered
-going
-chewing
-equipped
-covered
-travelling
-has
-happened
-borrowed
-do
-ached
-tucked
-sitting
-beat
-Stretching
-stop
-crushed
-fooling
-know
-lifted
-using
-stabbed
-walk
-continued
-paint
-believed
-gets
-counted
-lost
-ended
-did
-follows
-having
-watched
-make
-leave
-stopped
-toying
-gestured
-clean
-went
-told
-repaired
-concluded
-kill
-fired
-ten
-doing
-arrested
-pronounce
-arrives
-anchored
-see
-used
-juggling
-Tina
-dropped
-sleeping
-thinks
-feared
-delivered
-said
-dangled
-won
-dowdy
-stuck
-signaled
-find
-looking
-opened
-waiting
-does
-apologized
-zoomed
-got
-falling
-blocked
-filled
-shows
-be
-vindicated
-run
-rolled
-sold
-Bill
-use
-refused
-broken
-cut
-found
-put
-sing
-regretted
-prepared
-come
-envies
-received
-figured
-yelling
-getting
-invited
-studied
-leaving
-jogging
-hired
-place
-stand
-forgotten
-swim
-moving
-clogged
-asked
-waited
-swimming
-named
-slept
-retired
-smiled
-appeared
-informed
-explained
-declared
-comforted
-replace
-embarrassed
-reached
-Fred
-open
-speak
-behaving
-bought
-given
-wanted
-spoke
-working
-start
-Patting
-chased
-been
-needed
-poured
-call
-passed
-taken
-punished
-was
-threw
-faced
-lived
-knows
-chatting
-started
-turned
-collapsed
-stolen
-delayed
-hechanged
-hoped
-broadcast
-lift
-hear
-accept
-broke
-catch
-willbe
-worked
-removed
-carried
-loved
-made
-presented
-look
-gotten
-work
-tree
-placed
-convince
-supposed
-were
-knocked
-visited
-gave
-remembers
-yelled
-gone
-changed
-ordered
-played
-ran
-is
-pass
-moved
-defeated
-drive
-heard
-reads
-buy
-held
-promised
-have
-cleaned
-claimed
-seen
-annoying
-saw
-are
-influenced
-needs
-built
-interviewed
-studying
-began
-acts
-read
-take
-get
-answer
-wonder
-stir
-repeat
-'s
-tried
-wing
-watch
-felt
-reach
-paid
-took
-bullying
-crashed
-fell
-arrived
-ceded
-blowing
-coming
-included
-'m
-revealed
-died
-keep
-gripped
-advocated
-succeeded
-rescued
-upset
-lasted
-walked
-attacking
-looked
-lowered
-lying
-bottle
-understand
-pulled
-playing
-came
-left
+raining 0
+walking 0
+breaking  0.8
+managed 0.7
+barking 0.7
+cried -0.5
+show  0.5
+liked 0.5
+trade 0.1
+known 0.5
+sleep 0.1
+looks 0.3
+giggled 0.3
+suspected 0.7
+hunted  0.8
+help  0.5
+recentlybeen 0.1
+trying  0.1
+thank 0.3
+fit 0.7
+disappointed  -0.3
+writes  0.3
+had 0.5
+knew  0.5
+haveto  -0.5
+answered  0.5
+going 0.3
+chewing 0.3
+equipped  0.3
+covered 0.6
+travelling  0.3
+has 0.6
+happened  0.3
+borrowed  -0.5
+do  0.5
+ached -0.7
+tucked  0.7
+sitting 0.3
+beat  0.5
+Stretching  0.5
+stop  0.5
+crushed 0.8
+fooling 0.5
+know  0.5
+lifted  0.7
+using 0.7
+stabbed 0.7
+walk 0.1
+continued 0.5
+paint 0.3
+believed -0.5
+gets -0.5
+counted 0.6
+lost -0.7
+ended 0.5
+did 0.5
+follows -0.8
+having 0.7
+watched 0.5
+make 0.7
+leave -0.3
+stopped 0.5
+toying 0.8
+gestured 0.3
+clean 0.7
+went 0.7
+told 0.5
+repaired 0.5
+concluded 0.5
+kill 0.7
+fired 0.7
+ten 0.5
+doing 0.0
+arrested 0.5
+pronounce 0.5
+arrives 0.5
+anchored 0.3
+see 0.4
+used 0.3
+juggling 0.3
+Tina 0.5
+dropped 0.5
+sleeping 0.3
+thinks 0.3
+feared -0.7
+delivered 0.5
+said 0.5
+dangled 0.5
+won 0.7
+dowdy -0.7
+stuck -0.5
+signaled -0.3
+find 0.5
+looking 0.5
+opened 0.5
+waiting -0.7
+does 0.3
+apologized -0.5
+zoomed 0.3
+got -0.5
+falling -0.5
+blocked 0.5
+filled -0.5
+shows 0.5
+be -0.5
+vindicated -0.5
+run -0.3
+rolled 0.5
+sold 0.5
+Bill 0.3
+use 0.5
+refused -0.7
+broken 0.6
+cut 0.5
+found 0.5
+put 0.5
+sing 0.5
+regretted -0.7
+prepared -0.5
+come -0.5
+envies -0.5
+received -0.6
+figured 0.7
+yelling 0.6
+getting -0.5
+invited -0.3
+studied 0.6
+leaving -0.5
+jogging 0.5
+hired 0.8
+place 0.8
+stand 0.2
+forgotten 0.3
+swim 0.3
+moving 0.3
+clogged -0.3
+asked -0.4
+waited -0.5
+swimming 0.3
+named 0.5
+slept 0.3
+retired -0.5
+smiled 0.5
+appeared 0.3
+informed 0.5
+explained -0.3
+declared 0.5
+comforted -0.5
+replace 0.5
+embarrassed -0.5
+reached -0.3
+Fred 0.1
+open 0.5
+speak 0.5
+behaving 0.3
+bought 0.5
+given 0.7
+wanted -0.5
+spoke 0.5
+working 0.5
+start 0.3
+Patting 0.3
+chased 0.5
+been 0.5
+needed -0.7
+poured 0.5
+call 0.5
+passed 0.5
+taken 0.5
+punished 0.7
+was 0.3
+threw 0.7
+faced -0.5
+lived 0.3
+knows 0.3
+chatting 0.3
+started 0.3
+turned 0.3
+collapsed 0.7
+stolen -0.3
+delayed 0.5
+hechanged 0.1
+hoped -0.3
+broadcast 0.5
+lift 0.8
+hear 0.7
+accept -0.5
+broke 0.7
+catch 0.5
+willbe 0.3
+worked 0.5
+removed 0.5
+carried 0.8
+loved 0.5
+made 0.5
+presented 0.5
+look 0.5
+gotten -0.3
+work 0.5
+tree 0.3
+placed 0.5
+convince -0.4
+supposed -0.5
+were 0.3
+knocked 0.3
+visited -0.3
+gave 0.7
+remembers -0.3
+yelled 0.5
+gone 0.3
+changed 0.5
+ordered 0.7
+played 0.5
+ran 0.3
+is 0.5
+pass 0.5
+moved 0.7
+defeated 0.8
+drive 0.5
+heard -0.3
+reads 0.5
+buy 0.5
+held 0.5
+promised 0.3
+have 0.7
+cleaned 0.5
+claimed 0.5
+seen 0.5
+annoying -0.3
+saw 0.5
+are 0.3
+influenced 0.5
+needs -0.8
+built 0.5
+interviewed 0.5
+studying 0.5
+began 0.3
+acts 0.3
+read 0.5
+take 0.5 
+get -0.3
+answer -0.4
+wonder 0.5
+stir 0.5
+repeat 0.3
+'s 0.3
+tried 0.5
+wing 0.3
+watch 0.5
+felt -0.5
+reach 0.5
+paid -0.3
+took 0.5
+bullying 0.7
+crashed 0.7
+fell -0.5
+arrived 0.5
+ceded -0.5
+blowing 0.5
+coming 0.5
+included 0.7
+'m 0.3
+revealed 0.7
+died -0.3
+keep 0.6
+gripped -0.3
+advocated -0.5
+succeeded 0.7
+rescued 0.7
+upset -0.5
+lasted 0.3
+walked 0.5
+attacking 0.5
+looked 0.5
+lowered -0.5
+lying -0.3
+bottle 0.5
+understand -0.5
+pulled 0.3
+playing 0.3
+came 0.3
+left 0.3
