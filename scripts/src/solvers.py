@@ -14,7 +14,7 @@ class WordValue:
     def getFeature(UnkownWord, KBWord):
         syns1 = wordnet.synsets(UnkownWord)
         syns2 = wordnet.synsets(KBWord)
-        sim_value = None
+        sim_value = 0
         for lemma1 in syns1:
             for lemma2 in syns2:
                 sim_value += lemma1.wup_similarity(lemma2)
