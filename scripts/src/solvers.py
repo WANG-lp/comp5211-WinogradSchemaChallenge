@@ -9,9 +9,8 @@ from kb import WordParser
 from nltk.corpus import wordnet
 
 
-# if a word is not in the knowledge base, we calculate the similarity of this word with other words in KB
 # Intput is the unknownword and a word in KB;
-class WordFeature:
+class WordValue:
     def getFeature(UnkownWord, KBWord):
         syns1 = wordnet.synsets(UnkownWord)
         syns2 = wordnet.synsets(KBWord)
@@ -22,9 +21,19 @@ class WordFeature:
 
         sim_value = sim_value / (len(syns1) * len(syns2))
         return sim_value
-
+    
+    def getWordValue(word, wordList):
         # def getValue:
-
+        if word in wordList.keys():
+            return wordList(word)
+        
+        sim_dict = {}
+        for kword in wordList.keys():
+            sim_value = getFeature(word, kword)
+            sim_dict[kword] = sim_value
+        
+        #sim_dict is a dict contains the similarity of new words compared with words in KB
+        return 0
 
 class SolverBaseClass:
     def __init__(self):
