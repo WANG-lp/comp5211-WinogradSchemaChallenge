@@ -10,37 +10,37 @@ from nltk.corpus import wordnet
 
 
 # Intput is the unknownword and a word in KB;
-class WordValue:
-    def getFeature(UnkownWord, KBWord):
-        syns1 = wordnet.synsets(UnkownWord)
-        syns2 = wordnet.synsets(KBWord)
-        sim_value = 0
-        if (len(syns1) == 0 or len(syns2) == 0):
-            return 0
+def getFeature(UnkownWord, KBWord):
+    syns1 = wordnet.synsets(UnkownWord)
+    syns2 = wordnet.synsets(KBWord)
+    sim_value = 0
+    if (len(syns1) == 0 or len(syns2) == 0):
+        return 0
         
-        for lemma1 in syns1:
-            for lemma2 in syns2:
-                if lemma1.wup_similarity(lemma2) is None:
-                    sim_value = sim_value + 0    
-                else:
-                    sim_value = sim_value + lemma1.wup_similarity(lemma2)
+    count = 1
+    for lemma1 in syns1:
+        for lemma2 in syns2:
+            if lemma1.wup_similarity(lemma2) is None:
+                sim_value = sim_value + 0    
+            else:
+                sim_value = sim_value + lemma1.wup_similarity(lemma2)
+                count = count + 1
+        
+    return (sim_value/count)
 
-        sim_value = sim_value / (len(syns1) * len(syns2))
-        return sim_value
-    
-    def getWordValue(word, wordList):
-        # def getValue:
-        if word in wordList.keys():
-            return wordList[word]
+#input the word you want to know and the KB dictionary.
+def getWordValue(word, wordList):
+    if word in wordList.keys():
+        return wordList[word]
         
-        sim_dict = {}
-        for kword in wordList.keys():
-            sim_value = getFeature(word, kword)
-            sim_dict[kword] = sim_value
+    sim_dict = {}
+    for kword in wordList.keys():
+        sim_value = getFeature(word, kword)
+        sim_dict[kword] = sim_value
         
         #sim_dict is a dict contains the similarity of new words compared with words in KB
-        #How to get the value of new word is still under consideration
-        return 0
+    returnK = max(sim_dict, key=sim_dict.get)
+    return wordList[returnK]
 
 class SolverBaseClass:
     def __init__(self):
