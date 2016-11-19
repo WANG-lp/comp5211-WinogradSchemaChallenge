@@ -16,7 +16,7 @@ hunted;0.8
 help;0.5
 recentlybeen;0.1
 trying;0.1
-thank;0.3
+thank;-0.7
 fit;0.7
 disappointed;-0.3
 writes;0.3
@@ -164,7 +164,7 @@ chased;0.5
 been;0.5
 needed;-0.7
 poured;0.5
-call;0.5
+call;-0.5
 passed;0.5
 taken;0.5
 punished;0.7
@@ -242,7 +242,7 @@ get;-0.3
 answer;-0.4
 wonder;0.5
 stir;0.5
-repeat;0.3
+repeat;-0.3
 's;0.3
 tried;0.5
 wing;0.3
