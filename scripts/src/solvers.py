@@ -1,5 +1,7 @@
 from random import randint
 import string
+import copy
+import logging
 
 from input_parse import InputParser
 from common import TagProcessor
@@ -47,7 +49,7 @@ def getWordValue(word, wordList):
     return wordList[returnK]
 
 
-class SolverBaseClass:
+class SolverBaseClass(object):
     def __init__(self):
         self.tagProcessor = TagProcessor()
         self.sentenceParser = SentenceParser()
@@ -68,7 +70,8 @@ class SolverBaseClass:
         else:
             return 'b'
 
-    def mapAB(self, question):
+    def mapAB(self, q):
+        question = copy.deepcopy(q)
         question[0]['txt1'] = string.replace(question[0]['txt1'], question[2][0], ' Alice ')
         question[0]['txt1'] = string.replace(question[0]['txt1'], question[2][1], ' Emily ')
         # print question[2][0]
@@ -84,8 +87,8 @@ class SolverBaseClass:
         # s2 = " ".join(x[0] for x in tx1_tags[verbIndex:])
 
         if s1.find(question[2][0]) != -1:
-            return 1
-        return -1
+            return question, 1
+        return question, -1
 
     def listContainsNone(self, aList):
         for x in aList:
@@ -104,8 +107,8 @@ class SolverBaseClass:
                 res.append(1)
         return res
 
-    def extractFeatures(self, question):
-        answer_order = self.mapAB(question)
+    def extractFeatures(self, q):
+        question, answer_order = self.mapAB(q)
         txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])
         # print txt1_tags
         txt1_positive = 1
@@ -142,7 +145,7 @@ class SolverBaseClass:
                     txt2_prop = getWordValue(txt2_v, self.verbKB)
                     break
 
-        if txt1_prop  is None:
+        if txt1_prop is None:
             txt1_prop = 1
         if txt2_prop is None:
             txt2_prop = 1
@@ -264,9 +267,71 @@ class PositiveNegativeSolver(SolverBaseClass):
 
         return self.returnAns(ans)
 
+
 class RandomSolver(SolverBaseClass):
     def solver(self, question):
         if randint(0, 1) == 0:
             return 'a'
         else:
             return 'b'
+
+
+import os, sys
+
+if os.name == 'posix' and sys.version_info[0] < 3:
+    import subprocess32 as subprocess
+else:
+    import subprocess
+
+
+class StandfordCorefSolver(SolverBaseClass):
+    enable = True
+
+    def __init__(self, standford_dir="/csproject/comp5211/stanford-corenlp-full-2015-12-09/"):
+        if not standford_dir[-1] == "/":
+            standford_dir += '/'
+        super(self.__class__, self).__init__()
+        print "Checking Standford CoreNlp package..."
+        if os.path.isdir(standford_dir):
+            self.enable = True
+            self.rootPath = standford_dir
+            print "Found Standford CoreNlp Package in " + standford_dir
+            if not os.path.isdir(standford_dir + "inputs"):
+                try:
+                    os.mkdir(standford_dir + "inputs")
+                except Exception, e:
+                    print e.message
+                    self.enable = False
+        else:
+            print "Not found Standford coNlp library in " + standford_dir + " directory"
+            print "Please check the standford coNlp library path..."
+            self.enable = False
+            print "Exiting..."
+            exit(-1)
+
+    def solver(self, question):
+        if not self.enable:
+            return 'N/A'
+        try:
+            with open(self.rootPath + "question.txt", "wb") as f:
+                f.write(question[0]['txt1'] + ' ' + question[0]['pron'] + ' ' + question[0]['txt2'])
+                f.write(' ' + question[1]['quote1'] + ' ' + question[1]['pron'] + ' ' + question[1]['quote2'] + '\n')
+        except Exception, e:
+            print e.message
+            print "Cannot create input file for Standford CoNlp...  exit.."
+            return 'N/A'
+
+        try:
+            logging.info("Invoking Standford CoNlp...")
+            subprocess.check_call(['java', '-Xmx5g', '-cp', 'stanford-corenlp-3.7.0.jar:'
+                                                            'stanford-corenlp-models-3.7.0.jar:*',
+                                   'edu.stanford.nlp.pipeline.StanfordCoreNLP',
+                                   '-annotators', 'tokenize,ssplit,pos,lemma,ner,parse,mention,coref',
+                                   '-coref.algorithm', 'neural', '-file', './question.txt'],
+                                  cwd=self.rootPath, shell=False, stdout=open(os.devnull, 'wb'),
+                                  stderr=open(os.devnull, 'wb'))
+        except Exception, e:
+            print e.message
+            print "Invoke Standford CoNlp library error..."
+            print "Exiting..."
+            exit(-1)

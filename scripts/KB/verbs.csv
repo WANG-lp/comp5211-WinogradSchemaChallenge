@@ -85,7 +85,7 @@ hope;;hoped;hoped;1
 develop;;developed;developed;1
 carry;;carried;carried;1
 break;;broke;broken;1
-receive;;received;received;1
+receive;;received;received;-1
 agree;;agreed;agreed;1
 support;;supported;supported;1
 hit;;hit;hit;1
@@ -101,5 +101,4 @@ fear;fearing;feared;feared;1
 fit;fitting;fitted;fitted;-1
 advocate;advocating;advocated;advocated;1
 thank;;;;1
-receive;;received;received;1
 give;;given;;-1

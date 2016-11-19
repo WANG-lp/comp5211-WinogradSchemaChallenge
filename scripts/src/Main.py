@@ -1,16 +1,28 @@
 import random
+import logging
+import sys
 
 from input_parse import InputParser
 from common import TagProcessor
 from nltk_helper import SentenceParser
 from kb import WordParser
-from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver, RandomForestsSolver, GussianSolver
+from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver, RandomForestsSolver, GussianSolver, StandfordCorefSolver
 
 def printC(c, total, msg):
     print msg, c , c*100.0/total
 
 
 if __name__ == "__main__":
+
+    logging.basicConfig(filename='solvers.log', level=logging.DEBUG)
+    # root = logging.getLogger()
+    # root.setLevel(logging.DEBUG)
+    #
+    # ch = logging.StreamHandler(sys.stdout)
+    # ch.setLevel(logging.DEBUG)
+    # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # ch.setFormatter(formatter)
+    # root.addHandler(ch)
 
     filename = "../../datasets/WSCollection.xml"
     inputParser = InputParser(filename)
@@ -26,11 +38,14 @@ if __name__ == "__main__":
     rftSolver = RandomForestsSolver()
     gussianSolver = GussianSolver()
 
+    snlpSolver = StandfordCorefSolver("/Users/will/Workspace/stanford-corenlp-full-2016-10-31/")
+
     total = 0
     correct_pn = 0
     correct_svm = 0
     correct_rft = 0
     correct_guss = 0
+    correct_snlp = 0
 
     #random.shuffle(ques)
 
@@ -50,6 +65,10 @@ if __name__ == "__main__":
         print q[1]['pron'] + q[1]['quote1'] + " "+ q[1]['quote2']
 
         total += 1
+        ans_snlp = snlpSolver.solver(q)
+        if ans_snlp == q[-1]:
+            print "Standford correct!"
+            correct_snlp += 1
 
         ans_pn = pnSolver.solver(q)
         if ans_pn == q[-1]:
@@ -76,8 +95,8 @@ if __name__ == "__main__":
 
         #print randomSolver.solver(q), q[-1]
         print "#" * 6
-        #input_t = raw_input("Input any number to continue:")
-        input_t = ''
+        input_t = raw_input("Input any number to continue:")
+        #input_t = ''
         if len(input_t) == 0:
             num = num + 1
         else:
@@ -88,3 +107,4 @@ if __name__ == "__main__":
     printC(correct_svm, total, "svm:")
     printC(correct_guss, total, "gussian:")
     printC(correct_rft, total, "randomForestTree:")
+    printC(correct_snlp, total, "Standford Nlp:")
