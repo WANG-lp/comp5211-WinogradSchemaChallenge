@@ -38,7 +38,7 @@ boring;-1
 small;-1
 heavy;1
 twelve;0
-old;-1
+old;1
 cooperative;1
 ten;0
 fish;0
@@ -125,3 +125,8 @@ annoyed;-1
 indiscreet;-1
 snobs;-1
 dowdy;-1
+financial;-1
+beautiful;-1
+best;-1
+careful;-1
+nice;-1
