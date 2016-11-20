@@ -244,7 +244,7 @@ class PositiveNegativeSolver(SolverBaseClass):
         features = self.fixFeature(features)
 
         ans = 1
-        print features
+        #print features
         for x in features:
             ans = ans * x
 

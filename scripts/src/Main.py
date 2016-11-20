@@ -1,6 +1,7 @@
 import random
 import logging
 import sys
+import string
 import copy
 
 from input_parse import InputParser
@@ -10,18 +11,20 @@ from kb import WordParser
 from solvers import RandomSolver, SolverBaseClass, PositiveNegativeSolver, SVMSolver, RandomForestsSolver, \
     GussianSolver, StandfordCorefSolver
 
-
 sentenceParser = SentenceParser()
 tagProcessor = TagProcessor()
 
+
 def printC(c, total, msg):
     print msg, c, c * 100.0 / total
+
 
 def lowerCaseFromList(qList):
     ret = []
     for q in qList:
         ret.append(lowerCase(q))
     return ret
+
 
 def lowerCase(ques):
     q = copy.deepcopy(ques)
@@ -51,6 +54,38 @@ def lowerCase(ques):
         q[-1] = q[-1].lower()
     return q
 
+
+ans_list = []
+
+
+def printAns(output, ans, qOri):
+    outLine = str(num + 1) + ". " + qOri[0]['txt1'] + ' ' + qOri[0]['pron'] + ' ' + qOri[0]['txt2']
+    outLine = outLine.replace("\n", "")
+    print outLine
+    output.write(outLine + '\n')
+    outLine = ""
+    if len(qOri[1]['quote1']) > 0:
+        outLine = qOri[1]['quote1'] + ' '
+    outLine += qOri[1]['pron'] + ' ' + qOri[1]['quote2']
+    print outLine
+    output.write(outLine + '\n')
+
+    outLine = "Answer " + str(num + 1) + "."
+
+    if ans_pn == 'a':
+        outLine += 'A ' + qOri[2][0]
+        ans_list.append('A')
+    else:
+        outLine += 'B ' + qOri[2][1]
+        ans_list.append('B')
+
+    outLine += '\n'
+    print outLine
+
+    output.write(outLine + '\n')
+    output.flush()
+
+
 if __name__ == "__main__":
 
     logging.basicConfig(filename='solvers.log', level=logging.DEBUG)
@@ -63,12 +98,14 @@ if __name__ == "__main__":
     # ch.setFormatter(formatter)
     # root.addHandler(ch)
 
+    ANSWER_FILE = "./answer-output.txt"
+
     trainDataSet = "../../datasets/WSCollection.xml"
     trainParser = InputParser(trainDataSet)
     trainQues = trainParser.parse()
     trainQues = lowerCaseFromList(trainQues)
 
-    #inputDataSet = "../../datasets/WSCExample.xml"
+    # inputDataSet = "../../datasets/WSCExample.xml"
     inputDataSet = "../../datasets/PDPChallenge2016.xml"
     inputParser = InputParser(inputDataSet)
     inputQues = inputParser.parse()
@@ -84,7 +121,7 @@ if __name__ == "__main__":
     rftSolver = RandomForestsSolver()
     gussianSolver = GussianSolver()
 
-    snlpSolver = StandfordCorefSolver("/Users/will/Workspace/stanford-corenlp-full-2016-10-31/")
+    # snlpSolver = StandfordCorefSolver("/Users/will/Workspace/stanford-corenlp-full-2016-10-31/")
 
     total = 0
     correct_pn = 0
@@ -101,12 +138,12 @@ if __name__ == "__main__":
     gussianSolver.train(trainQues[:trainSetSize])
 
     num = 0
-    while num < len(inputQues):
+
+    outputFile = open(ANSWER_FILE, "wb")
+
+    while num < len(inputQues) and num < 2:
+        qOri = inputQues[num]
         q = lowerCase(inputQues[num])
-        print "#" * 6
-        print "Question " + str(num) + ':'
-        print q[0]['txt1'], '#', q[0]['pron'], '#', q[0]['txt2']
-        print q[1]['quote1'] + " " + q[1]['pron'] + " " + q[1]['quote2']
 
         total += 1
         # ans_snlp = snlpSolver.solver(q)
@@ -116,34 +153,42 @@ if __name__ == "__main__":
 
         ans_pn = pnSolver.solver(q)
         if ans_pn == q[-1]:
-            print "PN correct!"
+            # print "PN correct!"
             correct_pn += 1
 
         ans_svm = svmSolver.solver(q)
         if ans_svm == q[-1]:
-            print "svm correct!"
+            # print "svm correct!"
             correct_svm += 1
 
         ans_rft = rftSolver.solver(q)
         if ans_rft == q[-1]:
-            print "rft correct!"
+            # print "rft correct!"
             correct_rft += 1
 
         ans_guss = gussianSolver.solver(q)
         if ans_guss == q[-1]:
-            print "guss correct!"
+            # print "guss correct!"
             correct_guss += 1
 
-        print  ans_pn, ans_svm, ans_rft, ans_guss, q[-1]
+        printAns(outputFile, ans_pn, qOri)
 
         # print randomSolver.solver(q), q[-1]
-        print "#" * 6
+
         # input_t = raw_input("Input any number to continue:")
         input_t = ''
         if len(input_t) == 0:
             num = num + 1
         else:
-            num = int(input)
+            num = int(input_t)
+
+    outLine = ""
+    for i in ans_list[:-1]:
+        outLine += i + ", "
+    outLine += ans_list[-1]
+    outputFile.write(outLine)
+    outputFile.close()
+    print outLine
 
     printC(correct_pn, total, "PN:")
     printC(correct_svm, total, "svm:")
