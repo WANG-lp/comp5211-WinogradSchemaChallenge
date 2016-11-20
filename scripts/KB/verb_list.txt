@@ -13,7 +13,7 @@ looks;0.3
 giggled;0.3
 suspected;0.7
 hunted;0.8
-help;0.5
+help;-0.5
 recentlybeen;0.1
 trying;0.1
 thank;-0.7
@@ -84,7 +84,7 @@ sleeping;0.3
 thinks;0.3
 feared;-0.7
 delivered;0.5
-said;0.5
+said;-0.5
 dangled;0.5
 won;0.7
 dowdy;0.7
@@ -168,7 +168,7 @@ call;-0.5
 passed;0.5
 taken;0.5
 punished;0.7
-was;0.3
+was;-0.3
 threw;0.7
 faced;-0.5
 lived;0.3
@@ -201,7 +201,7 @@ tree;0.3
 placed;0.5
 convince;0.4
 supposed;-0.5
-were;0.3
+were;-0.3
 knocked;0.3
 visited;-0.3
 gave;0.7
@@ -284,3 +284,17 @@ ate;-0.5
 conveys;0.6
 stretching;0.5
 patting;0.7
+added;0.5
+helped;-1
+disappear;-1
+wish;1
+seem;1
+regulate;1
+marry;1
+consider;-1
+let;1
+closed;-1
+woke;1
+piled;1
+stack;1
+finish;-1
