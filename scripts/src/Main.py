@@ -105,8 +105,8 @@ if __name__ == "__main__":
     trainQues = trainParser.parse()
     trainQues = lowerCaseFromList(trainQues)
 
-    # inputDataSet = "../../datasets/WSCExample.xml"
-    inputDataSet = "../../datasets/PDPChallenge2016.xml"
+    inputDataSet = "../../datasets/WSCExample.xml"
+    #inputDataSet = "../../datasets/PDPChallenge2016.xml"
     inputParser = InputParser(inputDataSet)
     inputQues = inputParser.parse()
 
@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
     outputFile = open(ANSWER_FILE, "wb")
 
-    while num < len(inputQues) and num < 2:
+    while num < len(inputQues):
         qOri = inputQues[num]
         q = lowerCase(inputQues[num])
 
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
         # print randomSolver.solver(q), q[-1]
 
-        # input_t = raw_input("Input any number to continue:")
+        #input_t = raw_input("Input any number to continue:")
         input_t = ''
         if len(input_t) == 0:
             num = num + 1

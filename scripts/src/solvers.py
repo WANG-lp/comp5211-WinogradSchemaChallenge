@@ -126,6 +126,7 @@ class SolverBaseClass(object):
         for v in txt1_tags[::-1]:
             if self.tagProcessor.isVerb(v):
                 txt1_v = v[0]
+                #print txt1_v
                 txt1_prop = getWordValue(txt1_v, self.verbKB)
                 break
 
@@ -135,6 +136,7 @@ class SolverBaseClass(object):
         for v in txt2_tags[::-1]:
             if self.tagProcessor.isAdj(v):
                 txt2_adj = v[0]
+                #print txt2_adj
                 txt2_prop = getWordValue(txt2_adj, self.adjKB)
                 break
 
@@ -142,6 +144,7 @@ class SolverBaseClass(object):
             for v in txt2_tags[::-1]:
                 if self.tagProcessor.isVerb(v):
                     txt2_v = v[0]
+                    #print txt2_v
                     txt2_prop = getWordValue(txt2_v, self.verbKB)
                     break
 

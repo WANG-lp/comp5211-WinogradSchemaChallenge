@@ -298,3 +298,6 @@ woke;1
 piled;1
 stack;1
 finish;-1
+longing;-1
+gives;1
+make;-1

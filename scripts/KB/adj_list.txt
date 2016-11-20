@@ -130,3 +130,4 @@ beautiful;-1
 best;-1
 careful;-1
 nice;-1
+callous;1

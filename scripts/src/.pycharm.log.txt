@@ -1,116 +1,34 @@
-Checking Standford CoreNlp package...
-Found Standford CoreNlp Package in /Users/will/Workspace/stanford-corenlp-full-2016-10-31/
-######
-Question 0:
-then dad figured out how much the man owed the store; to that 
-he added the man's board-bill at the cook-shanty. # he # subtracted
- that amount from the man's wages, and made out his check
- he subtracted
-[1, 1, -1, 1]
-guss correct!
-b b b a a
-######
-######
-Question 1:
-always before, larry had helped dad with his work. but # he # could not help 
-him now, for dad said that his boss at the railroad company would not 
-want anyone but him to work in the office.
- he could not help
-[1, -1, 1, 1]
-svm correct!
-guss correct!
-b a b a a
-######
-######
-Question 2:
-always before, larry had helped dad with his work. but he could not help # him # now, for dad said that his boss at the railroad company would not 
-want anyone but him to work in the office.
-could not help him 
-[-1, -1, 1, 1]
-svm correct!
-rft correct!
-a b b a b
-######
-######
-Question 3:
-always before, larry had helped dad with his work. but he could not help 
-him now, for dad said that # his # boss at the railroad company would not want anyone but him
-to work in the office.
- his boss
-[-1, -1, 1, 1]
-svm correct!
-rft correct!
-a b b a b
-######
-######
-Question 4:
-the donkey wished a wart on its hind leg would disappear, and # it # did.
-and it did
-[1, 1, -1, 1]
-PN correct!
-svm correct!
-rft correct!
-b b b a b
-######
-######
-Question 5:
-when they had eventually calmed down a bit, and had gotten home, mr. 
-farley put the magic pebble in an iron safe. some day they might want 
-to use # it # , but really for now, what more could they wish for?
-to use it 
-[1, 1, 1, -1]
-b b b b a
-######
-######
-Question 6:
-the wainwrights treated mr. crowley like a prince until he made his will in 
-their favor; then they treated him like dirt. folks said he died just 
-to be rid of # their # everlasting nagging.
- their everlasting nagging
-[1, 1, -1, 1]
-guss correct!
-b b b a a
-######
-######
-Question 7:
-a number of times henry had been present at interviews which his father 
-had had with noted detectives who desired his aid in solving perplexing 
-mysteries, and those occasions stood out as red-letter days for # him # .
-red-letter days for him 
-[1, 1, 1, 1]
-PN correct!
-svm correct!
-rft correct!
-guss correct!
-a a a a a
-######
-######
-Question 8:
-what about the time you cut up tulip bulbs in the hamburgers because 
-you thought # they # were onions?
- they were onions.
-[1, 1, 1, 1]
-PN correct!
-svm correct!
-rft correct!
-guss correct!
-a a a a a
-######
-######
-Question 9:
-no one joins facebook to be sad and lonely. but a new study from the 
-university of wisconsin psychologist george lincoln argues that that's
-exactly how # it # makes us feel.
- it makes us feel
-[1, 1, 1, 1]
-PN correct!
-svm correct!
-rft correct!
-guss correct!
-a a a a a
-######
-######
-Question 10:
-equally swoon-worthy is c.k. dexter haven, a pallid young dandy holding 
-a jade-handled walking stick, with a poodle asleep at # his # feet
-at his feet
+1. The city councilmen refused the demonstrators a permit because they feared violence.
+they feared violence
+Answer 1.A The city councilmen
+
+2. Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him his wallet.
+he is longing for a new suit
+Answer 2.A Babar
+
+3. Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him his wallet.
+he likes to make people happy
+Answer 3.B old man
+
+4. Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him his wallet.
+he gives
+Answer 4.B old man
+
+5. Babar wonders how he can get new clothing. Luckily, a very rich old man who has always been fond of little elephants understands right away that he is longing for a fine suit. As he likes to make people happy, he gives him his wallet.
+gives him 
+Answer 5.A Babar
+
+6. Dan had to stop Bill from toying with the injured bird. He is very compassionate.
+He is very compassionate.
+Answer 6.A Dan
+
+7. Dan tried to stop Bill from getting help for the injured bird. He is very callous.
+He is very callous.
+Answer 7.B Bill
+
+A, A, B, B, A, A, B
+PN: 0 0.0
+svm: 0 0.0
+gussian: 0 0.0
+randomForestTree: 0 0.0
+Standford Nlp: 0 0.0
