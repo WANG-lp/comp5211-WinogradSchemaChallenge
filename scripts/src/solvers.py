@@ -243,23 +243,6 @@ class PositiveNegativeSolver(SolverBaseClass):
         features = self.extractFeatures(question)
         features = self.fixFeature(features)
 
-        txt1_tags = self.sentenceParser.makeTags(question[0]['txt1'])
-        for t in txt1_tags[::-1]:
-            if self.tagProcessor.isVerb(t):
-                prop = self.vbParser.parserV(t[0])
-                break
-            if self.tagProcessor.isAdj(t):
-                prop = self.vbParser.parserAdj(t[0])
-                break
-        txt1_tags = self.sentenceParser.makeTags(question[0]['txt2'])
-        for t in txt1_tags[::-1]:
-            if self.tagProcessor.isVerb(t):
-                prop = self.vbParser.parserV(t[0])
-                break
-            if self.tagProcessor.isAdj(t):
-                prop = self.vbParser.parserAdj(t[0])
-                break
-
         ans = 1
         print features
         for x in features:
@@ -282,7 +265,7 @@ if os.name == 'posix' and sys.version_info[0] < 3:
     import subprocess32 as subprocess
 else:
     import subprocess
-
+from xml.dom import minidom
 
 class StandfordCorefSolver(SolverBaseClass):
     enable = True
@@ -329,9 +312,28 @@ class StandfordCorefSolver(SolverBaseClass):
                                    '-annotators', 'tokenize,ssplit,pos,lemma,ner,parse,mention,coref',
                                    '-coref.algorithm', 'neural', '-file', './question.txt'],
                                   cwd=self.rootPath, shell=False, stdout=open(os.devnull, 'wb'),
-                                  stderr=open(os.devnull, 'wb'))
+                                  #stderr=open(os.devnull, 'wb')
+                                  )
+            xmldoc = minidom.parse(self.rootPath+"question.txt.xml")
+            mentions = xmldoc.getElementsByTagName("mention")
+
+            ans_txt = ""
+            for m in mentions:
+                if m.attributes.keys() == u'representative':
+                    for v in m.attributes.values():
+                        if v.firstChild.data == u'true':
+                            ans_txt = m.getElementsByTagName("text")[0].firstChild.data.strip().lower()
+
+            if ans_txt.find(question[2][0]):
+                return 'a'
+            else:
+                return 'b'
+
+
         except Exception, e:
             print e.message
             print "Invoke Standford CoNlp library error..."
             print "Exiting..."
             exit(-1)
+
+
