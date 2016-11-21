@@ -5,6 +5,14 @@ from nltk_helper import SentenceParser
 
 class InputParser:
     def __init__(self, filename):
+        try:
+            f = open(filename, "r")
+            f.close()
+        except Exception,e:
+            print "Open file: " + filename + " error!"
+            exit(-1)
+
+
         self.xmldoc = minidom.parse(filename)
         self.tagProcessor = TagProcessor()
         self.sentenceParser = SentenceParser()

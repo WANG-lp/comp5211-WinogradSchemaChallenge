@@ -3,6 +3,7 @@ import logging
 import sys
 import string
 import copy
+import os
 
 from input_parse import InputParser
 from common import TagProcessor
@@ -86,6 +87,10 @@ def printAns(output, ans, qOri):
     output.flush()
 
 
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
+
+
 if __name__ == "__main__":
 
     logging.basicConfig(filename='solvers.log', level=logging.DEBUG)
@@ -98,15 +103,22 @@ if __name__ == "__main__":
     # ch.setFormatter(formatter)
     # root.addHandler(ch)
 
-    ANSWER_FILE = "./answer-output.txt"
+    # inputDataSet = get_script_path() + "../../datasets/WSCollection.xml"
+    inputDataSet = "../../datasets/PDPChallenge2016.xml"
+    if len(sys.argv) > 1:
+        inputDataSet = sys.argv[1]
 
-    trainDataSet = "../../datasets/WSCollection.xml"
-    trainParser = InputParser(trainDataSet)
-    trainQues = trainParser.parse()
-    trainQues = lowerCaseFromList(trainQues)
+    ANSWER_FILE = get_script_path() + "../output/answer-output.txt"
 
-    inputDataSet = "../../datasets/WSCExample.xml"
-    #inputDataSet = "../../datasets/PDPChallenge2016.xml"
+    trainDataSet1 = get_script_path() + "../../datasets/WSCollection.xml"
+    trainParser1 = InputParser(trainDataSet1)
+    trainQues1 = trainParser1.parse()
+    trainDataSet2 = get_script_path() + "../../datasets/PDPChallenge2016.xml"
+    trainParser2 = InputParser(trainDataSet2)
+    trainQues2 = trainParser2.parse()
+
+    trainQues = lowerCaseFromList(trainQues1 + trainQues2)
+
     inputParser = InputParser(inputDataSet)
     inputQues = inputParser.parse()
 
@@ -132,7 +144,7 @@ if __name__ == "__main__":
 
     # random.shuffle(trainQues)
 
-    trainSetSize = 100
+    trainSetSize = 200
     svmSolver.train(trainQues[:trainSetSize])
     rftSolver.train(trainQues[:trainSetSize], n_est=6)
     gussianSolver.train(trainQues[:trainSetSize])
@@ -175,7 +187,7 @@ if __name__ == "__main__":
 
         # print randomSolver.solver(q), q[-1]
 
-        #input_t = raw_input("Input any number to continue:")
+        # input_t = raw_input("Input any number to continue:")
         input_t = ''
         if len(input_t) == 0:
             num = num + 1
