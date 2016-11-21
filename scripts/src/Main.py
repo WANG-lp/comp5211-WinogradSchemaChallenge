@@ -204,7 +204,7 @@ if __name__ == "__main__":
     for i in ans_list[:-1]:
         outLine += i + ", "
     outLine += ans_list[-1]
-    outputFile.write(outLine)
+    outputFile.write(outLine + "\n")
     outputFile.close()
     print outLine
 
