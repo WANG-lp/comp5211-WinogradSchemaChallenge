@@ -189,7 +189,7 @@ if __name__ == "__main__":
             # print "guss correct!"
             correct_guss += 1
 
-        printAns(outputFile, ans_pn, qOri)
+        printAns(outputFile, ans_rft, qOri)
 
         # print randomSolver.solver(q), q[-1]
 

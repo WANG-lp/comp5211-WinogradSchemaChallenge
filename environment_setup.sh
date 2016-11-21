@@ -5,6 +5,7 @@ PROJECT_DIR=`dirname $0`
 echo "Using $PROJECT_DIR as work dir..."
 
 cd $PROJECT_DIR
+mkdir -p ./scripts/output
 
 echo "Downloading miniconda for python environment..."
 
