@@ -85,6 +85,10 @@ def printAns(output, ans, qOri):
     output.write(outLine + '\n')
     output.flush()
 
+def voting(ans_pn, ans_svm, ans_rft):
+    if ans_rft != ans_svm:
+        return ans_pn
+    return ans_rft
 
 if __name__ == "__main__":
 
@@ -102,11 +106,18 @@ if __name__ == "__main__":
 
     trainDataSet = "../../datasets/WSCollection.xml"
     trainParser = InputParser(trainDataSet)
-    trainQues = trainParser.parse()
+    trainQues1 = trainParser.parse()
+
+    trainDataSet = "../../datasets/WSCollection.xml"
+    trainParser = InputParser(trainDataSet)
+    trainQues2 = trainParser.parse()
+
+    trainQues = trainQues1 + trainQues2
     trainQues = lowerCaseFromList(trainQues)
 
-    inputDataSet = "../../datasets/WSCExample.xml"
-    #inputDataSet = "../../datasets/PDPChallenge2016.xml"
+
+    #inputDataSet = "../../datasets/WSCollection.xml"
+    inputDataSet = "../../datasets/PDPChallenge2016.xml"
     inputParser = InputParser(inputDataSet)
     inputQues = inputParser.parse()
 
@@ -129,8 +140,9 @@ if __name__ == "__main__":
     correct_rft = 0
     correct_guss = 0
     correct_snlp = 0
+    correct_voting = 0
 
-    # random.shuffle(trainQues)
+    random.shuffle(trainQues)
 
     trainSetSize = 100
     svmSolver.train(trainQues[:trainSetSize])
@@ -171,7 +183,12 @@ if __name__ == "__main__":
             # print "guss correct!"
             correct_guss += 1
 
-        printAns(outputFile, ans_pn, qOri)
+        ans_voting = voting(ans_pn, ans_svm, ans_rft)
+        if ans_voting == q[-1]:
+            correct_voting += 1
+
+
+        printAns(outputFile, ans_voting, qOri)
 
         # print randomSolver.solver(q), q[-1]
 
@@ -194,4 +211,4 @@ if __name__ == "__main__":
     printC(correct_svm, total, "svm:")
     printC(correct_guss, total, "gussian:")
     printC(correct_rft, total, "randomForestTree:")
-    printC(correct_snlp, total, "Standford Nlp:")
+    printC(correct_voting, total, "Voting:")
