@@ -108,7 +108,11 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         inputDataSet = sys.argv[1]
 
+    print "Input dataset is " + inputDataSet
+
     ANSWER_FILE = get_script_path() + "../output/answer-output.txt"
+
+    #print "Output file is " + ANSWER_FILE
 
     trainDataSet1 = get_script_path() + "../../datasets/WSCollection.xml"
     trainParser1 = InputParser(trainDataSet1)
@@ -145,6 +149,7 @@ if __name__ == "__main__":
     # random.shuffle(trainQues)
 
     trainSetSize = 200
+    print "Training models..."
     svmSolver.train(trainQues[:trainSetSize])
     rftSolver.train(trainQues[:trainSetSize], n_est=6)
     gussianSolver.train(trainQues[:trainSetSize])
@@ -153,6 +158,7 @@ if __name__ == "__main__":
 
     outputFile = open(ANSWER_FILE, "wb")
 
+    print "Start prediction..."
     while num < len(inputQues):
         qOri = inputQues[num]
         q = lowerCase(inputQues[num])

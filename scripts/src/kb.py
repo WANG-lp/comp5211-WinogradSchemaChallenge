@@ -1,11 +1,15 @@
-import csv
+import csv, os, sys
+
+
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
 
 
 class KB:
     verbKB = {}
     adjKB = {}
 
-    def __init__(self, kb_dir="../KB/"):
+    def __init__(self, kb_dir=get_script_path()+"../KB/"):
         with open(kb_dir + "verb_list.txt") as f:
             spamreader = csv.reader(f, delimiter=';')
             for row in spamreader:
@@ -26,7 +30,7 @@ class WordParser:
     verbSet = []
     adjSet = []
 
-    def __init__(self, kb_dir="../KB/"):
+    def __init__(self, kb_dir=get_script_path()+"../KB/"):
         with open(kb_dir + 'verbs.csv', 'rb') as csvfile:
             spamreader = csv.reader(csvfile, delimiter=';', quotechar='#')
             for row in spamreader:

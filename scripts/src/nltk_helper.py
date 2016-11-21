@@ -1,7 +1,13 @@
-import nltk
+import nltk, os, sys
 
 from nltk.tokenize import word_tokenize
 
+
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
+
+
+nltk.data.path.append(get_script_path() + "../../nltk_data")
 
 class SentenceParser:
     def makeTags(self, sentence):

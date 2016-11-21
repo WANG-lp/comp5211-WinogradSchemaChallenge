@@ -48,13 +48,15 @@ def getWordValue(word, wordList):
     returnK = max(sim_dict, key=sim_dict.get)
     return wordList[returnK]
 
+def get_script_path():
+    return os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
 
 class SolverBaseClass(object):
     def __init__(self):
         self.tagProcessor = TagProcessor()
         self.sentenceParser = SentenceParser()
         self.vbParser = WordParser()
-        kb = KB()
+        kb = KB(kb_dir=get_script_path()+"../KB/")
         self.verbKB = kb.getVerbKB()
         self.adjKB = kb.getAdjKB()
 
