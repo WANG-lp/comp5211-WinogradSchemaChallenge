@@ -212,4 +212,4 @@ if __name__ == "__main__":
     printC(correct_svm, total, "svm:")
     printC(correct_guss, total, "gussian:")
     printC(correct_rft, total, "randomForestTree:")
-    printC(correct_snlp, total, "Standford Nlp:")
+    #printC(correct_snlp, total, "Standford Nlp:")
